@@ -1,0 +1,14 @@
+package com.github.CreatureOX.eemod.item;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
+
+public class ModItems {
+
+	public static Item experimentItem;
+	
+	public static final void init(){
+		experimentItem = new Item().setUnlocalizedName("ExpItem");
+		GameRegistry.registerItem(experimentItem, "experiem");
+	}
+}

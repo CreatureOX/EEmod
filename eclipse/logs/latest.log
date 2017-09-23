@@ -1,0 +1,32 @@
+[13:17:31] [main/INFO]: Setting user: Player317
+[13:17:41] [Client thread/INFO]: LWJGL Version: 2.9.1
+[13:18:17] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:EE Mod
+[13:18:20] [Sound Library Loader/INFO]: Sound engine started
+[13:18:25] [Client thread/INFO]: Created: 16x16 textures/blocks-atlas
+[13:18:25] [Client thread/INFO]: Created: 16x16 textures/items-atlas
+[13:18:26] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:EE Mod
+[13:18:27] [Client thread/INFO]: Created: 512x256 textures/blocks-atlas
+[13:18:27] [Client thread/INFO]: Created: 256x256 textures/items-atlas
+[13:18:29] [Sound Library Loader/INFO]: Sound engine started
+[13:18:52] [Server thread/INFO]: Starting integrated minecraft server version 1.7.10
+[13:18:52] [Server thread/INFO]: Generating keypair
+[13:18:53] [Server thread/INFO]: Preparing start region for level 0
+[13:18:55] [Server thread/INFO]: Preparing spawn area: 2%
+[13:18:56] [Server thread/INFO]: Preparing spawn area: 18%
+[13:18:57] [Server thread/INFO]: Preparing spawn area: 51%
+[13:18:58] [Server thread/INFO]: Preparing spawn area: 88%
+[13:18:59] [Server thread/INFO]: Changing view distance to 12, from 10
+[13:19:00] [Server thread/INFO]: Player317[local:E:0782aea1] logged in with entity id 251 at (175.96808037013284, 76.84756041068765, 232.25053847647555)
+[13:19:00] [Server thread/INFO]: Player317 加入了游戏
+[13:19:03] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 2655ms behind, skipping 53 tick(s)
+[13:19:10] [Server thread/INFO]: Saving and pausing game...
+[13:19:10] [Server thread/INFO]: Saving chunks for level 'ee'/Overworld
+[13:19:11] [Server thread/INFO]: Saving chunks for level 'ee'/Nether
+[13:19:11] [Server thread/INFO]: Saving chunks for level 'ee'/The End
+[13:19:11] [Server thread/INFO]: Stopping server
+[13:19:11] [Server thread/INFO]: Saving players
+[13:19:11] [Server thread/INFO]: Saving worlds
+[13:19:11] [Server thread/INFO]: Saving chunks for level 'ee'/Overworld
+[13:19:11] [Server thread/INFO]: Saving chunks for level 'ee'/Nether
+[13:19:11] [Server thread/INFO]: Saving chunks for level 'ee'/The End
+[13:19:13] [Client thread/INFO]: Stopping!
