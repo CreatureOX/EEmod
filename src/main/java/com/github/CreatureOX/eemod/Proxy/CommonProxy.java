@@ -1,5 +1,7 @@
 package com.github.CreatureOX.eemod.Proxy;
 
+import com.github.CreatureOX.eemod.block.ModBlocks;
+import com.github.CreatureOX.eemod.events.ModEvents;
 import com.github.CreatureOX.eemod.item.ModItems;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -10,9 +12,12 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
         ModItems.init();
+        ModBlocks.init();
+
     }
 
     public void init(FMLInitializationEvent e) {
+    	ModEvents.init();
 
     }
 

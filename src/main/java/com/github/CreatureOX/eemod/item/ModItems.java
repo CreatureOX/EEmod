@@ -15,7 +15,7 @@ public class ModItems {
 		experimentItem = new Item().setUnlocalizedName("experimentItem").setTextureName(Main.MODID+":experimentItem").setCreativeTab(CreativeTabs.tabMisc);
 		GameRegistry.registerItem(experimentItem, "experimentItem");
 		
-		hammerItem = new Item().setUnlocalizedName("hammerItem").setTextureName(Main.MODID+":experimentItem").setCreativeTab(CreativeTabs.tabMisc);
+		hammerItem = new Hammer().setUnlocalizedName("hammerItem").setTextureName(Main.MODID+":hammer").setCreativeTab(CreativeTabs.tabMisc);
 		GameRegistry.registerItem(hammerItem, "hammerItem");
 	}
 }

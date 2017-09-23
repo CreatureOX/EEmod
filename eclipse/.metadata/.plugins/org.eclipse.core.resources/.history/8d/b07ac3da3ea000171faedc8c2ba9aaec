@@ -1,0 +1,24 @@
+package com.github.CreatureOX.eemod.item;
+
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
+
+public class ExperimentItem extends Item{
+	@Override
+	public boolean hitEntity(ItemStack par1ItemStack,EntityLivingBase par2EntityLivingBase,EntityLivingBase par3EntityLivingBase) {
+	    par1ItemStack.damageItem(1, par3EntityLivingBase);
+	    if (par3EntityLivingBase.worldObj.isRemote) {
+	    	EntityTNTPrimed entity = new EntityTNTPrimed(world, x, y, z, player);
+	    	entity.fuse = 80;
+	    	world.spawnEntityInWorld(entity);
+	        return true;
+	    }
+	    return true;
+	}
+
+}

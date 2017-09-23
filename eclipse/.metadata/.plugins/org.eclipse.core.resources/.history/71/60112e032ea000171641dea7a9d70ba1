@@ -1,0 +1,33 @@
+package com.github.CreatureOX.eemod.events;
+
+import cpw.mods.fml.common.eventhandler.Cancelable;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import cpw.mods.fml.common.gameevent.PlayerEvent;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+
+
+public class ModEvents {
+	
+	public ModEvents(){
+		MinecraftForge.EVENT_BUS.register(this);
+		EventLoader.EVENT_BUS.register(this);
+	}
+	
+    @Cancelable
+    public static class PlayerRightClickGrassBlockEvent extends net.minecraftforge.event.entity.player.PlayerEvent
+    {
+        public final BlockPos pos;
+        public final World world;
+
+        public PlayerRightClickGrassBlockEvent(EntityPlayer player, BlockPos pos, World world)
+        {
+            super(player);
+            this.pos = pos;
+            this.world = world;
+        }
+    }
+
+}
