@@ -1,14 +1,20 @@
 package com.github.CreatureOX.eemod.events;
 
+import com.github.CreatureOX.eemod.item.MagicWand;
+
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
 
 public class ModEvents {
 
@@ -23,6 +29,18 @@ public class ModEvents {
             EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
             entityPlayer.addChatMessage(new ChatComponentText("Falling Star! You fell "+event.distance+ " meters.That's cool, man!"));
 		}
+	}
+	
+	@SubscribeEvent
+	public void MagicWandEvent(PlayerInteractEvent event){
+		if(event.entityLiving instanceof EntityPlayerMP){
+			EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
+			if (event.action == Action.RIGHT_CLICK_BLOCK && entityPlayer.getCurrentEquippedItem() !=null){
+					if(entityPlayer.getCurrentEquippedItem().getItem().getUnlocalizedName().equals("item.magicwandItem")){
+							event.world.setBlock(event.x, event.y, event.z, Blocks.ice);
+				}
+			}
+		}		
 	}
 	
 }

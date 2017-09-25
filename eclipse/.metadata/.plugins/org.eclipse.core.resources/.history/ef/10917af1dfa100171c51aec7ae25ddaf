@@ -1,0 +1,35 @@
+package com.github.CreatureOX.eemod.events;
+
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.util.ChatComponentText;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
+
+public class ModEvents {
+
+	@EventHandler
+	public static final void init(){
+		MinecraftForge.EVENT_BUS.register(new ModEvents());
+	}
+	
+	@SubscribeEvent
+	public void test(LivingFallEvent event){
+		if(event.entityLiving instanceof EntityPlayerMP){
+            EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
+            entityPlayer.addChatMessage(new ChatComponentText("Falling Star! You fell "+event.distance+ " meters.That's cool, man!"));
+		}
+	}
+	
+	@SubscribeEvent
+	public void MagicWandEvent(PlayerInteractEvent event){
+		if(event.entityLiving instanceof EntityPlayerMP){
+			EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;			
+		}		
+	}
+	
+}

@@ -1,0 +1,23 @@
+package com.github.CreatureOX.eemod.item;
+
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+
+public class MagicStick extends Item{
+
+	@Override
+	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) {
+    	int x = (int) par3EntityPlayer.posX;
+    	int y = (int) par3EntityPlayer.posY;
+    	int z = (int) par3EntityPlayer.posZ;
+		if (!par2World.isRemote) {
+			System.out.println("Experiment Item test.");
+	        par2World.setBlock(x+1, y, z+1, Blocks.ice);
+	    }
+	    return par1ItemStack;
+	}
+}

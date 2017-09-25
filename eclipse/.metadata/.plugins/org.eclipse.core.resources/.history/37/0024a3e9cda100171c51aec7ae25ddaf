@@ -1,0 +1,47 @@
+package com.github.CreatureOX.eemod.block;
+
+import com.github.CreatureOX.eemod.Main;
+
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.world.World;
+import net.minecraftforge.common.MinecraftForge;
+
+public class BasicBlock extends Block {
+
+	protected BasicBlock(String unlocalizedName,Material material) {
+        super(material);
+        this.setBlockName(unlocalizedName);
+        this.setBlockTextureName(Main.MODID + ":" + unlocalizedName);
+        this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setHardness(2.0F);
+        this.setResistance(6.0F);
+        this.setLightLevel(1.0F);
+        this.setHarvestLevel("pickaxe", 3);
+        this.setStepSound(soundTypeMetal);
+
+	}
+	
+	@Override
+	public boolean onBlockActivated(World par1World, int par2, int par3,
+		int par4, EntityPlayer par5EntityPlayer, int par6, float par7,
+		float par8, float par9)
+	{
+
+		if(par5EntityPlayer.getHeldItem().itemID == LOZmod.swordMaster.itemID)
+		{
+			par5EntityPlayer.getHeldItem().stackSize -= 1; //only if you want to use the item when you do this.
+			if(par1World.isRemote)
+			{
+				par1World.setBlock(par2, par3, par4, Blocks.ice);
+			}
+		}
+		return super.onBlockActivated(par1World, par2, par3, par4, par5EntityPlayer,
+			par6, par7, par8, par9);
+	}
+
+
+}
