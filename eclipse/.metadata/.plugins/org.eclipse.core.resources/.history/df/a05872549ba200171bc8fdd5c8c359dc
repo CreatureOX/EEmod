@@ -1,0 +1,5 @@
+package com.github.CreatureOX.eemod.item;
+import net.minecraft.item.ItemSword;
+public class ExcaliburSword extends ItemSword{
+
+}

@@ -1,0 +1,16 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.Main;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemFood;
+import net.minecraft.potion.PotionEffect;
+
+public class ItemPoisonedApple extends ItemFood{
+
+	public ItemPoisonedApple(int p_i45340_1_, boolean p_i45340_2_) {
+		super(p_i45340_1_, p_i45340_2_);
+		// TODO 自动生成的构造函数存根
+	}
+
+}

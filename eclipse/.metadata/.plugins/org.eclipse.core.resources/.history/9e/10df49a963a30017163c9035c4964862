@@ -1,0 +1,10 @@
+package com.github.CreatureOX.eemod.world.gen;
+
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.OreGenEvent;
+import net.minecraftforge.fml.common.eventhandler.Event;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+public class ModWorldGenerator {
+
+}

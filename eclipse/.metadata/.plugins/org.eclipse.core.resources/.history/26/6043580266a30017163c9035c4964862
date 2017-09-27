@@ -1,0 +1,23 @@
+package com.github.CreatureOX.eemod.world.gen;
+
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.terraingen.OreGenEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
+public class ModWorldGenerator {
+
+	public static void init(){
+		MinecraftForge.ORE_GEN_BUS.register(new ModWorldGenerator());
+	}
+
+//	  change mineral sample	
+//    @SubscribeEvent
+//    public void ModOreGenGenerateMinable(OreGenEvent.GenerateMinable event)
+//    {
+//        if (event.type == OreGenEvent.GenerateMinable.EventType.DIAMOND)
+//        {
+//            event.setResult(event.RESULT.DENY);
+//        }
+//    }
+	
+}

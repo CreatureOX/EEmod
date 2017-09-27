@@ -1,0 +1,30 @@
+package com.github.CreatureOX.eemod.Proxy;
+
+import com.github.CreatureOX.eemod.block.ModBlocks;
+import com.github.CreatureOX.eemod.creativetab.ModCreativeTabs;
+import com.github.CreatureOX.eemod.events.ModEvents;
+import com.github.CreatureOX.eemod.item.ModItems;
+
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+public class CommonProxy {
+
+    public void preInit(FMLPreInitializationEvent e) {
+    	ModCreativeTabs.init();
+        ModItems.init();
+        ModBlocks.init();
+
+    }
+
+    public void init(FMLInitializationEvent e) {
+    	ModEvents.init();
+
+    }
+
+    public void postInit(FMLPostInitializationEvent e) {
+
+    }	
+
+}

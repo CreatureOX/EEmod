@@ -1,0 +1,9 @@
+package com.github.CreatureOX.eemod.achievement;
+
+import net.minecraft.stats.Achievement;
+
+public class ModAchievements {
+
+	public static Achievement BeAWizard = new Achievement();
+	
+}

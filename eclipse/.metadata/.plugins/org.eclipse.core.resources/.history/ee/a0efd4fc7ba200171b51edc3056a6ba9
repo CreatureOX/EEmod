@@ -1,0 +1,11 @@
+package creativetab;
+
+import net.minecraft.creativetab.CreativeTabs;
+
+public class CreativeTabsEEmod extends CreativeTabs
+{
+    public CreativeTabsEEmod()
+    {
+        super("eemod");
+    }
+}

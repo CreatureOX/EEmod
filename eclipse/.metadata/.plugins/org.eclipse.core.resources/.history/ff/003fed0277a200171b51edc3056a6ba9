@@ -1,0 +1,15 @@
+package com.github.CreatureOX.eemod.item;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemFood;
+
+public class ItemPoisonedApple extends ItemFood{
+
+	public ItemPoisonedApple() {
+		super(4,0.6F,false);
+        this.setAlwaysEdible();
+        this.setUnlocalizedName("redstoneApple");
+        this.setCreativeTab(CreativeTabs.tabMisc);
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.github.CreatureOX.eemod.achievement;
+
+import com.github.CreatureOX.eemod.Main;
+import com.github.CreatureOX.eemod.block.ModBlocks;
+import com.github.CreatureOX.eemod.item.ModItems;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
+import net.minecraftforge.common.AchievementPage;
+
+public class ModAchievements {
+
+	public static Achievement beAWizard = new Achievement("achievement.eemod.beAWizard",
+			"eemod.beAWizard",5,-4,ModItems.MagicWand,null);
+	public static Achievement firstUseMagic = new Achievement("achievement.eemod.firstUseMagic",
+			"eemod.firstUseMagic",0,0,Blocks.ice,null);
+	public static Achievement firstUseMagicSmelting = new Achievement("achievement.eemod.firstUseMagicSmelting",
+			"eemod.firstUseMagicSmelting",1,1,ModBlocks.magicBlock,null);   
+	
+	public static AchievementPage pageEEmod = new AchievementPage("eemod",beAWizard,firstUseMagic,firstUseMagicSmelting);
+	
+	public static final void init()
+	{
+		beAWizard.setSpecial().registerStat().initIndependentStat();
+		firstUseMagic.setSpecial().registerStat().initIndependentStat();
+		firstUseMagicSmelting.setSpecial().registerStat().initIndependentStat();;
+		
+        AchievementPage.registerAchievementPage(pageEEmod);
+	}
+}

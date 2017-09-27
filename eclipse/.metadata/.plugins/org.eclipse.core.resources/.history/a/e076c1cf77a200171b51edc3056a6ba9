@@ -1,0 +1,23 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.Main;
+import com.github.CreatureOX.eemod.block.ModBlocks;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+
+public class ItemPoisonedApple extends ItemFood{
+
+	public ItemPoisonedApple() {
+		super(4,0.6F,false);
+        this.setAlwaysEdible();
+        this.setUnlocalizedName("magicwandItem");
+        this.setTextureName(Main.MODID+":posioned_apple");
+        this.setCreativeTab(CreativeTabs.tabMisc);
+        
+        GameRegistry.addRecipe(new ItemStack(ModBlocks.experimentBlock, 1, 0), new Object[] {"###", '#', new ItemStack(ModBlocks.magicBlock, 2, 0)});
+	}
+
+}

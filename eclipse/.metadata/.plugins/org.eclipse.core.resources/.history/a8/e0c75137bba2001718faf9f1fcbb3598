@@ -1,0 +1,22 @@
+package com.github.CreatureOX.eemod.achievement;
+
+import com.github.CreatureOX.eemod.Main;
+import com.github.CreatureOX.eemod.item.ModItems;
+
+import net.minecraft.stats.Achievement;
+import net.minecraft.stats.AchievementList;
+import net.minecraftforge.common.AchievementPage;
+
+public class ModAchievements {
+
+	public static Achievement beAWizard = new Achievement("achievement.eemod.beAWizard","eemod.beAWizard",5,-4,ModItems.MagicWand,null);
+	
+	public static AchievementPage EEmod = new AchievementPage("eemod",beAWizard);
+	
+	public static final void init()
+	{
+		beAWizard.setSpecial().registerStat();
+		
+        AchievementPage.registerAchievementPage(pageFMLTutor);
+	}
+}

@@ -1,0 +1,25 @@
+package com.github.CreatureOX.eemod.item;
+
+public class ModItemCraftings {
+
+	public ModItemCraftings(){
+		registerModItemRecipce();
+		registerModItemSmelting();
+		registerModItemFuel();
+	}
+	
+    private static void registerRecipe()
+    {
+
+    }
+
+    private static void registerSmelting()
+    {
+
+    }
+
+    private static void registerFuel()
+    {
+
+    }
+}

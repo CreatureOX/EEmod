@@ -19,12 +19,8 @@ import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 public class MagicWand extends Item{
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) {
-//    	int x = (int) par3EntityPlayer.posX;
-//    	int y = (int) par3EntityPlayer.posY;
-//    	int z = (int) par3EntityPlayer.posZ;
-//		if (!par2World.isRemote) {
-//	        par2World.setBlock(x, y - 1, z, Blocks.ice);
-//	    }		
-	    return par1ItemStack;
-	}		
+		
+		return par1ItemStack;
+	
+	}			
 }

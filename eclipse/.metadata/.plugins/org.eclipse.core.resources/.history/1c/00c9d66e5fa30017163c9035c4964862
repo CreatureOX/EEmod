@@ -1,0 +1,33 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.block.ModBlocks;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class ModItemCraftings {
+
+	public ModItemCraftings(){
+		registerModItemRecipce();
+		registerModItemSmelting();
+		registerModItemFuel();
+	}
+	
+    private static void registerModItemRecipce()
+    {
+		GameRegistry.addRecipe(new ItemStack(ModItems.PoisonedApple, 1, 0), new Object[] {"###", "#*#","###",'#', Items.ender_eye, '*', Items.apple});
+		GameRegistry.addRecipe(new ItemStack(ModItems.MagicWand, 2, 0), new Object[] {"#", "#", '#', Blocks.log});
+    }
+
+    private static void registerModItemSmelting()
+    {
+		GameRegistry.addSmelting(ModBlocks.magicBlock, new ItemStack(Items.coal), 0.5F);
+    }
+
+    private static void registerModItemFuel()
+    {
+
+    }
+}

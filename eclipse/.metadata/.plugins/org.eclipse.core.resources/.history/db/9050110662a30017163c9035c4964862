@@ -1,0 +1,40 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.block.ModBlocks;
+
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.IFuelHandler;
+import cpw.mods.fml.common.registry.GameRegistry;
+
+public class ModItemCraftings {
+
+	public static final void init(){
+		registerModItemRecipce();
+		registerModItemSmelting();
+		registerModItemFuel();
+	}
+	
+    private static void registerModItemRecipce(){
+		GameRegistry.addRecipe(new ItemStack(ModItems.PoisonedApple, 1, 0), new Object[] {"###", "#*#","###",'#', Items.ender_eye, '*', Items.apple});
+		GameRegistry.addRecipe(new ItemStack(ModItems.MagicWand, 2, 0), new Object[] {"#", "#", '#', Blocks.log});
+    }
+
+    private static void registerModItemSmelting()
+    {
+		GameRegistry.addSmelting(Items.coal, new ItemStack(ModBlocks.magicBlock), 0.5F);
+    }
+
+    private static void registerModItemFuel()
+    {
+    	GameRegistry.registerFuelHandler(new IFuelHandler()
+    	{
+            @Override
+            public int getBurnTime(ItemStack fuel)
+            {
+                return Items.diamond != fuel.getItem() ? 0 : 12800;
+            }
+        });
+    }
+}

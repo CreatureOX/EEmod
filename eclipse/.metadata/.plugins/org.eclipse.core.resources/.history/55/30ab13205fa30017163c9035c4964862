@@ -1,0 +1,8 @@
+package com.github.CreatureOX.eemod.item;
+
+public class ModItemCraftings {
+
+	public ModItemCraftings(){
+		
+	}
+}

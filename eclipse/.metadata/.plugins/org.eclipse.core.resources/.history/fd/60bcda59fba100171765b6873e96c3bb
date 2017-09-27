@@ -1,0 +1,19 @@
+package com.github.CreatureOX.eemod.block;
+
+import com.github.CreatureOX.eemod.Main;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.ItemStack;
+
+public class ModBlocks {
+	
+	public static Block experimentBlock;
+	
+	public static final void init(){
+		GameRegistry.registerBlock(experimentBlock=new BasicBlock("blackboard",Material.iron), "blackboard");
+		GameRegistry.addRecipe(new ItemStack(Block.BasicBlock, 4, 0), new Object[] {"#", '#', new ItemStack(Block.wood, 1, 0)});
+	}
+
+}

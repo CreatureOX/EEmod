@@ -1,0 +1,14 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.Main;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemFood;
+
+public class ItemPoisonedApple extends ItemFood{
+
+	public ItemPoisonedApple() {
+		
+	}
+
+}

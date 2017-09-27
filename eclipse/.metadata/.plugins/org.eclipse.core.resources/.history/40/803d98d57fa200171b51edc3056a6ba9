@@ -1,0 +1,17 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.Main;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+
+public class ModItemFoods {
+	public static ItemFood PosionedApple;	
+	
+public static final void init(){
+	PosionedApple = new ItemPoisonedApple().setUnlocalizedName("PosionedApple").setTextureName(Main.MODID+":poisonedapple").setCreativeTab(CreativeTabs.tabMisc);
+	}
+}
