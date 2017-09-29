@@ -14,6 +14,7 @@ achievement.eemod.firstUseMagic=First Use Magic
 achievement.eemod.firstUseMagic.desc=First Use Magic
 achievement.eemod.firstUseMagicSmelting=First Use Magic Smelting
 achievement.eemod.firstUseMagicSmelting.desc=First Use Magic Smelting
+container.eemod.demo=EEmod GUI Demo
 key.eemod.showTime=Show Time
 key.categories.eemod=EEmod Helper
 chat.eemod.time=The total world time is: %s.

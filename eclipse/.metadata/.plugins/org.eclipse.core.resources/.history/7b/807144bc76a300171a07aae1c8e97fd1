@@ -1,0 +1,13 @@
+package com.github.CreatureOX.eemod.inventory;
+
+import net.minecraft.entity.player.EntityPlayer;
+
+public class ContainerDemo {
+	
+    public ContainerDemo(EntityPlayer player)
+    {
+        super();
+
+        // TODO
+    }
+}

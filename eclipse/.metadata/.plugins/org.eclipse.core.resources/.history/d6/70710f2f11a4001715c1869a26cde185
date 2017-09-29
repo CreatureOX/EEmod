@@ -1,0 +1,76 @@
+package com.github.CreatureOX.eemod.client.gui;
+
+import org.lwjgl.input.Keyboard;
+
+import com.github.CreatureOX.eemod.Main;
+
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.GuiTextField;
+import net.minecraft.util.ResourceLocation;
+
+public class EEmodGui extends GuiScreen{
+
+    private GuiScreen parentScreen;
+    private GuiButton btnClose;
+    private GuiTextField tfInput;
+    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg"); //第一个参数是modid
+    
+    public EEmodGui(GuiScreen parent)
+    {
+            parentScreen = parent; //记下是哪个界面打开了它,以便以后返回那个界面
+            //在这里初始化与界面无关的数据,或者是只需初始化一次的数据.
+    }
+
+    public void initGui()
+    {
+    	buttonList.add(btnClose = new GuiButton(0, (int)(width*0.75), (int)(height*0.85), 80, 20, "关闭"));
+    	Keyboard.enableRepeatEvents(true); //打开键盘连续输入
+    	tfInput = new GuiTextField(fontRendererObj, (int)(width*0.5)-150, (int)(height*0.85), 300, 20);
+    	tfInput.setMaxStringLength(64); //设置最大长度,可省略
+    	tfInput.setFocused(false); //设置是否为焦点
+    	tfInput.setCanLoseFocus(true); //设置为可以被取消焦点
+    	//这里部署控件
+    }
+
+    public void drawScreen(int par1, int par2, float par3)
+    {
+            drawDefaultBackground();
+            //在这里绘制文本或纹理等非控件内容,这里绘制的东西会被控件(即按键)盖住.
+            mc.renderEngine.bindTexture(texture); //绑定纹理
+            //drawTexturedModalRect((int)(width*0.5)-128, 0,0,0,256,256); //绘制一个256x256的纹理
+            func_146110_a(0, 0, 0, 300, width, height, 750, 600); //中间的0,300是UV偏移,根据你的纹理随意定吧.1440,900同理.
+            drawRect((int)(width*0.1), (int)(height*0.1), (int)(width*0.9), (int)(height*0.7), 0x80FFFFFF);//半透明的矩形
+            super.drawScreen(par1,par2,par3);
+            //在这里绘制文本或纹理等非控件内容,这里绘制的东西会盖在控件(即按键)之上.
+            drawCenteredString(fontRendererObj, "Your §f§nPROUD§r first screen", width/2, (int)(height*0.2), 0xFFFF00);
+            drawString(fontRendererObj, String.format("You are pointing to: (§o%d§r,§o%d§r)", par1, par2),
+            			(int)(width*0.05), (int)(height*0.9), 0xFFFFFF);
+            tfInput.drawTextBox();
+    }
+    
+    @Override
+    protected void actionPerformed(GuiButton par1GuiButton){
+             if(par1GuiButton.id == 0){  //用户按下了id为1的按钮          
+                    mc.displayGuiScreen(parentScreen);
+             }
+    }
+    
+    @Override
+    protected void keyTyped(char par1, int par2) {
+    	if(tfInput.textboxKeyTyped(par1, par2)) //向文本框传入输入的内容
+    		return;
+    	super.keyTyped(par1, par2);
+    }
+
+    @Override
+    protected void mouseClicked(int par1, int par2, int par3) {
+    	tfInput.mouseClicked(par1, par2, par3); //调用文本框的鼠标点击检查
+    	super.mouseClicked(par1, par2, par3);
+    }
+
+    @Override
+    public void onGuiClosed() {
+    	Keyboard.enableRepeatEvents(false); //关闭键盘连续输入
+    }
+}

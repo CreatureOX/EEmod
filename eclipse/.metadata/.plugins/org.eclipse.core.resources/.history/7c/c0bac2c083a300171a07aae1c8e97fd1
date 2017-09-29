@@ -1,0 +1,23 @@
+package com.github.CreatureOX.eemod.client.gui;
+
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.GuiScreen;
+
+public class GuiTutorial extends GuiScreen{
+	GuiButton a;
+	GuiButton b;
+	public void initGui() {
+	    this.buttonList.add(this.a = new GuiButton(0, this.width / 2 - 100, this.height / 2 - 24, "This is button a"));
+	    this.buttonList.add(this.b = new GuiButton(1, this.width / 2 - 100, this.height / 2 + 4, "This is button b"));
+	}
+	@Override
+	public void drawScreen(int mouseX, int mouseY, float partialTicks) {
+	    this.drawDefaultBackground();
+	    super.drawScreen(mouseX, mouseY, partialTicks);
+	}
+	
+	@Override
+	public boolean doesGuiPauseGame() {
+	    return false;
+	}
+}

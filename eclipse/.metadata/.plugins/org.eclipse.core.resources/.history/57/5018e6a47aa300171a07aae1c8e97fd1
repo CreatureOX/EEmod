@@ -1,0 +1,42 @@
+package com.github.CreatureOX.eemod.inventory;
+
+import com.github.CreatureOX.eemod.Main;
+import com.github.CreatureOX.eemod.client.gui.ModGuiContainer;
+
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import cpw.mods.fml.common.network.IGuiHandler;
+import cpw.mods.fml.common.network.NetworkRegistry;
+
+public class ModGuiElements implements IGuiHandler{
+	
+	public static final int GUI_DEMO = 1;
+
+    public ModGuiElements()
+    {
+    	 NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, this);
+    }
+
+    @Override
+    public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z){
+        switch (ID){
+        case GUI_DEMO:
+            return new ContainerDemo();
+        default:
+            return null;
+        }
+        // TODO
+    }
+
+    @Override
+    public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z){
+        switch (ID)
+        {
+        case GUI_DEMO:
+            return new ModGuiContainer(new ContainerDemo());
+        default:
+            return null;
+        }
+        // TODO
+    }
+}

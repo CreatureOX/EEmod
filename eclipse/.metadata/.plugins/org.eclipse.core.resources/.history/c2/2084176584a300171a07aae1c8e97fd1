@@ -1,0 +1,44 @@
+package com.github.CreatureOX.eemod.Proxy;
+
+import com.github.CreatureOX.eemod.Main;
+import com.github.CreatureOX.eemod.achievement.ModAchievements;
+import com.github.CreatureOX.eemod.block.ModBlocks;
+import com.github.CreatureOX.eemod.client.ModKeyBindings;
+import com.github.CreatureOX.eemod.client.gui.ModGuiHandler;
+import com.github.CreatureOX.eemod.creativetab.ModCreativeTabs;
+import com.github.CreatureOX.eemod.events.ModEvents;
+import com.github.CreatureOX.eemod.inventory.ModGuiElements;
+import com.github.CreatureOX.eemod.item.ModItemCraftings;
+import com.github.CreatureOX.eemod.item.ModItems;
+import com.github.CreatureOX.eemod.world.gen.ModWorldGenerator;
+
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkRegistry;
+
+public class CommonProxy {
+
+    public void preInit(FMLPreInitializationEvent e) {
+    	ModCreativeTabs.init();
+        ModItems.init();
+        ModBlocks.init();
+
+    }
+
+    public void init(FMLInitializationEvent e) {
+    	ModKeyBindings.init();
+        ModGuiElements.init();
+        NetworkRegistry.INSTANCE.registerGuiHandler(Main.instance, new ModGuiHandler());
+    	ModItemCraftings.init();
+    	ModAchievements.init();
+    	ModEvents.init();
+    	new ModWorldGenerator();
+
+    }
+
+    public void postInit(FMLPostInitializationEvent e) {
+
+    }	
+
+}
