@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.github.CreatureOX.eemod.achievement.ModAchievements"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent"/>
 <fullyQualifiedTypeName name="net.minecraft.init.Blocks"/>
 <fullyQualifiedTypeName name="net.minecraftforge.event.entity.player.PlayerEvent"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="net.minecraft.client.gui.GuiIngame"/>
 <fullyQualifiedTypeName name="net.minecraftforge.client.event.GuiScreenEvent"/>
 <fullyQualifiedTypeName name="net.minecraft.client.gui.GuiOptions"/>
+<fullyQualifiedTypeName name="com.github.CreatureOX.eemod.client.gui.EEmodCursesGui"/>
 </qualifiedTypeNameHistroy>

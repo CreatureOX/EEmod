@@ -1,7 +1,0 @@
-package com.github.CreatureOX.eemod.block;
-
-import net.minecraft.block.Block;
-
-public class BasicBlock extends Block {
-
-}

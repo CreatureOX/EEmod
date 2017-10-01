@@ -26,11 +26,24 @@ public class ModItems {
 	public static Item PurpleIngot;
 	
 	public static ItemFood PoisonedApple;
+	public static ItemFood Oatmeal;
+	public static ItemFood Bun;
+	public static ItemFood BertieBottsEveryFlavorBeans;
+	public static ItemFood ButterBeer;
+	public static ItemFood CholocateFrog;
 	
 	public static ItemSword ColorfulSword;
+	
+	public static Item magicHelmet;
+	public static Item magicChestplate;
+	public static Item magicLeggings;
+	public static Item magicBoots;
+	
+	public static Item SortingHat;
+	public static Item InvisibleCloak;
 
 	public static ToolMaterial MAGIC = EnumHelper.addToolMaterial("MAGIC", 3, 1561/2, 12.0F, 0, 22);
-	public static ArmorMaterial ARMOR = EnumHelper.addArmorMaterial("NAME", 16,  new int[] {3,8,6,3}, 30);
+	public static ArmorMaterial MAGIC_ARMOR = EnumHelper.addArmorMaterial("MAGIC_ARRMOR", 16,  new int[] {3,8,6,3}, 30);
 	
 	public static final void init(){
 		
@@ -47,13 +60,18 @@ public class ModItems {
 		GameRegistry.registerItem(PurpleIngot, "PurpleIngot");
 		
 		//PoisonedApple = new ModItemFoods("poisonedappleItem", 2, 0.1f, false,null).setAlwaysEdible();
-		//poison effect to the item which lasts for 10 seconds (!), has an amplifier of 0 (Level 1 of the potion)
+		//poison effect to the item which lasts for 10 seconds (!), has an amplifier of 0 (Level 1 of the potion);
 		PoisonedApple = new ModItemFoods("poisonedappleItem", 2, 0.2f, false,new PotionEffect(Potion.poison.id, 200, 4)).setAlwaysEdible();
-		//PoisonedApple = new ModItemFoods("poisonedappleItem", 2, 0.2f, false,new PotionEffect(Potion.moveSpeed.id, 1200, 1)).setAlwaysEdible();
+		Oatmeal = new ModItemFoods("oatmealItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
 		
 		GameRegistry.registerItem(PoisonedApple, "PoisonedApple");
+		GameRegistry.registerItem(Oatmeal, "Oatmeal");
 		
 		GameRegistry.registerItem(ColorfulSword = new ModItemSwords("colorful_sword", MAGIC), "ColorfulSword");
-				
+			
+		GameRegistry.registerItem(magicHelmet = new ModItemArmors("magic_helmet", MAGIC_ARMOR, "magic_armor", 0), "magic_helmet"); //0 for helmet
+		GameRegistry.registerItem(magicChestplate = new ModItemArmors("magic_chestplate", MAGIC_ARMOR, "magic_armor", 1), "magic_chestplate"); // 1 for chestplate
+		GameRegistry.registerItem(magicLeggings = new ModItemArmors("magic_leggings", MAGIC_ARMOR, "magic_armor", 2), "magic_leggings"); // 2 for leggings
+		GameRegistry.registerItem(magicBoots = new ModItemArmors("magic_boots", MAGIC_ARMOR, "magic_armor", 3), "magic_boots"); // 3 for boots
 	}
 }

@@ -13,23 +13,27 @@ public class EEmodCursesGui extends GuiScreen{
 
     private GuiScreen parentScreen;
 	private GuiButton btnCurse1;
+	private GuiButton btnCurse2;
+	private GuiButton btnCurse3;
     private GuiButton btnClose;
 	
-    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg"); //第一个参数是modid
+    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg"); //绗竴涓弬鏁版槸modid
     
     public EEmodCursesGui(GuiScreen parent){
             parentScreen = parent;
     }
 
     public void initGui(){
-    	buttonList.add(btnCurse1 = new GuiButton(1, (int)(width*0.75), (int)(height*0.85)-20, 80, 20, "咒语1"));		
-    	buttonList.add(btnClose = new GuiButton(0, (int)(width*0.75), (int)(height*0.85), 80, 20, "关闭"));
-    	//这里部署控件
+    	buttonList.add(btnCurse1 = new GuiButton(1, (int)(width*0.75), (int)(height*0.85)-20, 80, 20, "鍜掕1"));		
+    	buttonList.add(btnCurse1 = new GuiButton(1, (int)(width*0.75), (int)(height*0.85)-40, 80, 20, "鍜掕2"));		
+    	buttonList.add(btnCurse1 = new GuiButton(1, (int)(width*0.75), (int)(height*0.85)-60, 80, 20, "鍜掕3"));		
+    	buttonList.add(btnClose = new GuiButton(0, (int)(width*0.75), (int)(height*0.85), 80, 20, "鍏抽棴"));
+    	//杩欓噷閮ㄧ讲鎺т欢
     }
 
     public void drawScreen(int par1, int par2, float par3){
             drawDefaultBackground();
-            mc.renderEngine.bindTexture(texture); //绑定纹理
+            mc.renderEngine.bindTexture(texture); //缁戝畾绾圭悊
             func_146110_a(0, 0, 0, 0, width, height, 750, 600);
             super.drawScreen(par1,par2,par3);
     }

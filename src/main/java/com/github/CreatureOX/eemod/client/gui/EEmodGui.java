@@ -14,63 +14,63 @@ public class EEmodGui extends GuiScreen{
     private GuiScreen parentScreen;
     private GuiButton btnClose;
     private GuiTextField tfInput;
-    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg"); //µÚÒ»¸ö²ÎÊıÊÇmodid
+    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg"); //ç¬¬ä¸€ä¸ªå‚æ•°æ˜¯modid
     
     public EEmodGui(GuiScreen parent)
     {
-            parentScreen = parent; //¼ÇÏÂÊÇÄÄ¸ö½çÃæ´ò¿ªÁËËü,ÒÔ±ãÒÔºó·µ»ØÄÇ¸ö½çÃæ
-            //ÔÚÕâÀï³õÊ¼»¯Óë½çÃæÎŞ¹ØµÄÊı¾İ,»òÕßÊÇÖ»Ğè³õÊ¼»¯Ò»´ÎµÄÊı¾İ.
+            parentScreen = parent; //è®°ä¸‹æ˜¯å“ªä¸ªç•Œé¢æ‰“å¼€äº†å®ƒ,ä»¥ä¾¿ä»¥åè¿”å›é‚£ä¸ªç•Œé¢
+            //åœ¨è¿™é‡Œåˆå§‹åŒ–ä¸ç•Œé¢æ— å…³çš„æ•°æ®,æˆ–è€…æ˜¯åªéœ€åˆå§‹åŒ–ä¸€æ¬¡çš„æ•°æ®.
     }
 
     public void initGui()
     {
-    	buttonList.add(btnClose = new GuiButton(0, (int)(width*0.75), (int)(height*0.85), 80, 20, "¹Ø±Õ"));
-    	Keyboard.enableRepeatEvents(true); //´ò¿ª¼üÅÌÁ¬ĞøÊäÈë
+    	buttonList.add(btnClose = new GuiButton(0, (int)(width*0.75), (int)(height*0.85), 80, 20, "å…³é—­"));
+    	Keyboard.enableRepeatEvents(true); //æ‰“å¼€é”®ç›˜è¿ç»­è¾“å…¥
     	tfInput = new GuiTextField(fontRendererObj, (int)(width*0.5)-150, (int)(height*0.85), 300, 20);
-    	tfInput.setMaxStringLength(64); //ÉèÖÃ×î´ó³¤¶È,¿ÉÊ¡ÂÔ
-    	tfInput.setFocused(false); //ÉèÖÃÊÇ·ñÎª½¹µã
-    	tfInput.setCanLoseFocus(true); //ÉèÖÃÎª¿ÉÒÔ±»È¡Ïû½¹µã
-    	//ÕâÀï²¿Êğ¿Ø¼ş
+    	tfInput.setMaxStringLength(64); //è®¾ç½®æœ€å¤§é•¿åº¦,å¯çœç•¥
+    	tfInput.setFocused(false); //è®¾ç½®æ˜¯å¦ä¸ºç„¦ç‚¹
+    	tfInput.setCanLoseFocus(true); //è®¾ç½®ä¸ºå¯ä»¥è¢«å–æ¶ˆç„¦ç‚¹
+    	//è¿™é‡Œéƒ¨ç½²æ§ä»¶
     }
 
     public void drawScreen(int par1, int par2, float par3)
     {
             drawDefaultBackground();
-            //ÔÚÕâÀï»æÖÆÎÄ±¾»òÎÆÀíµÈ·Ç¿Ø¼şÄÚÈİ,ÕâÀï»æÖÆµÄ¶«Î÷»á±»¿Ø¼ş(¼´°´¼ü)¸Ç×¡.
-            mc.renderEngine.bindTexture(texture); //°ó¶¨ÎÆÀí
-            //drawTexturedModalRect((int)(width*0.5)-128, 0,0,0,256,256); //»æÖÆÒ»¸ö256x256µÄÎÆÀí
-            func_146110_a(0, 0, 0, 0, width, height, 750, 600); //ÖĞ¼äµÄ0,300ÊÇUVÆ«ÒÆ,¸ù¾İÄãµÄÎÆÀíËæÒâ¶¨°É.1440,900Í¬Àí.
-            drawRect((int)(width*0.1), (int)(height*0.1), (int)(width*0.9), (int)(height*0.7), 0x80FFFFFF);//°ëÍ¸Ã÷µÄ¾ØĞÎ
+            //åœ¨è¿™é‡Œç»˜åˆ¶æ–‡æœ¬æˆ–çº¹ç†ç­‰éæ§ä»¶å†…å®¹,è¿™é‡Œç»˜åˆ¶çš„ä¸œè¥¿ä¼šè¢«æ§ä»¶(å³æŒ‰é”®)ç›–ä½.
+            mc.renderEngine.bindTexture(texture); //ç»‘å®šçº¹ç†
+            //drawTexturedModalRect((int)(width*0.5)-128, 0,0,0,256,256); //ç»˜åˆ¶ä¸€ä¸ª256x256çš„çº¹ç†
+            func_146110_a(0, 0, 0, 0, width, height, 750, 600); //ä¸­é—´çš„0,300æ˜¯UVåç§»,æ ¹æ®ä½ çš„çº¹ç†éšæ„å®šå§.1440,900åŒç†.
+            drawRect((int)(width*0.1), (int)(height*0.1), (int)(width*0.9), (int)(height*0.7), 0x80FFFFFF);//åŠé€æ˜çš„çŸ©å½¢
             super.drawScreen(par1,par2,par3);
-            //ÔÚÕâÀï»æÖÆÎÄ±¾»òÎÆÀíµÈ·Ç¿Ø¼şÄÚÈİ,ÕâÀï»æÖÆµÄ¶«Î÷»á¸ÇÔÚ¿Ø¼ş(¼´°´¼ü)Ö®ÉÏ.
-            drawCenteredString(fontRendererObj, "Your ¡ìf¡ìnHogwarts¡ìr screen", width/2, (int)(height*0.2), 0xFFFF00);
-            drawString(fontRendererObj, String.format("You are pointing to: (¡ìo%d¡ìr,¡ìo%d¡ìr)", par1, par2),
+            //åœ¨è¿™é‡Œç»˜åˆ¶æ–‡æœ¬æˆ–çº¹ç†ç­‰éæ§ä»¶å†…å®¹,è¿™é‡Œç»˜åˆ¶çš„ä¸œè¥¿ä¼šç›–åœ¨æ§ä»¶(å³æŒ‰é”®)ä¹‹ä¸Š.
+            drawCenteredString(fontRendererObj, "Your Â§fÂ§nHogwartsÂ§r screen", width/2, (int)(height*0.2), 0xFFFF00);
+            drawString(fontRendererObj, String.format("You are pointing to: (Â§o%dÂ§r,Â§o%dÂ§r)", par1, par2),
             			(int)(width*0.05), (int)(height*0.9), 0xFFFFFF);
             //tfInput.drawTextBox();
     }
     
     @Override
     protected void actionPerformed(GuiButton par1GuiButton){
-             if(par1GuiButton.id == 0){  //ÓÃ»§°´ÏÂÁËidÎª1µÄ°´Å¥          
+             if(par1GuiButton.id == 0){  //ç”¨æˆ·æŒ‰ä¸‹äº†idä¸º1çš„æŒ‰é’®          
                     mc.displayGuiScreen(parentScreen);
              }
     }
     
     @Override
     protected void keyTyped(char par1, int par2) {
-    	if(tfInput.textboxKeyTyped(par1, par2)) //ÏòÎÄ±¾¿ò´«ÈëÊäÈëµÄÄÚÈİ
+    	if(tfInput.textboxKeyTyped(par1, par2)) //å‘æ–‡æœ¬æ¡†ä¼ å…¥è¾“å…¥çš„å†…å®¹
     		return;
     	super.keyTyped(par1, par2);
     }
 
     @Override
     protected void mouseClicked(int par1, int par2, int par3) {
-    	tfInput.mouseClicked(par1, par2, par3); //µ÷ÓÃÎÄ±¾¿òµÄÊó±êµã»÷¼ì²é
+    	tfInput.mouseClicked(par1, par2, par3); //è°ƒç”¨æ–‡æœ¬æ¡†çš„é¼ æ ‡ç‚¹å‡»æ£€æŸ¥
     	super.mouseClicked(par1, par2, par3);
     }
 
     @Override
     public void onGuiClosed() {
-    	Keyboard.enableRepeatEvents(false); //¹Ø±Õ¼üÅÌÁ¬ĞøÊäÈë
+    	Keyboard.enableRepeatEvents(false); //å…³é—­é”®ç›˜è¿ç»­è¾“å…¥
     }
 }

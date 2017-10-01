@@ -5,6 +5,7 @@ import org.lwjgl.input.Keyboard;
 import com.github.CreatureOX.eemod.Main;
 import com.github.CreatureOX.eemod.achievement.ModAchievements;
 import com.github.CreatureOX.eemod.client.ModKeyBindings;
+import com.github.CreatureOX.eemod.client.gui.EEmodCursesGui;
 import com.github.CreatureOX.eemod.client.gui.EEmodGui;
 import com.github.CreatureOX.eemod.item.MagicWand;
 import com.github.CreatureOX.eemod.item.ModItems;
@@ -54,24 +55,31 @@ public class ModEvents {
 		FMLCommonHandler.instance().bus().register(new ModEvents());
 	}
 	
-	@SubscribeEvent
-	public void test(LivingFallEvent event){
-		if(event.entityLiving instanceof EntityPlayerMP){
-            EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
-            entityPlayer.addChatMessage(new ChatComponentText("Falling Star! You fell "+event.distance+ " meters.That's cool, man!"));
-		}
-	}
+//	@SubscribeEvent
+//	public void test(LivingFallEvent event){
+//		if(event.entityLiving instanceof EntityPlayerMP){
+//            EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
+//            entityPlayer.addChatMessage(new ChatComponentText("Falling Star! You fell "+event.distance+ " meters.That's cool, man!"));
+//		}
+//	}
 	
 	@SubscribeEvent
 	public void MagicWandEvent(PlayerInteractEvent event){
 		if(event.entityLiving instanceof EntityPlayerMP){
 			EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
-			if (event.action == Action.RIGHT_CLICK_BLOCK && entityPlayer.getCurrentEquippedItem() !=null){
+			if (event.action == Action.RIGHT_CLICK_BLOCK && Keyboard.getEventKey() != Keyboard.KEY_LCONTROL && entityPlayer.getCurrentEquippedItem() !=null){
 					if(entityPlayer.getCurrentEquippedItem().getItem().getUnlocalizedName().equals("item.magicwandItem")){
 							event.world.setBlock(event.x, event.y, event.z, Blocks.ice);
 							entityPlayer.triggerAchievement(ModAchievements.firstUseMagic);
 				}
 			}
+			if (event.action == Action.RIGHT_CLICK_AIR && Keyboard.getEventKey() == Keyboard.KEY_LCONTROL && entityPlayer.getCurrentEquippedItem() !=null){
+				if(entityPlayer.getCurrentEquippedItem().getItem().getUnlocalizedName().equals("item.magicwandItem")){
+					Minecraft mc = Minecraft.getMinecraft();
+					mc.displayGuiScreen(new EEmodCursesGui(mc.currentScreen));
+			}
+		}
+			
 		}		
 	}	
 	
@@ -118,81 +126,6 @@ public class ModEvents {
         }
     }
     
-	@SubscribeEvent
-	public void MagicCurseEvent(PlayerInteractEvent event){
-		if(event.entityLiving instanceof EntityPlayerMP){
-			EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
-			if (event.action == Action.RIGHT_CLICK_BLOCK && entityPlayer.getCurrentEquippedItem() !=null){
-					if(entityPlayer.getCurrentEquippedItem().getItem().getUnlocalizedName().equals("tile.magicblock")){
-						//entityPlayer.openGui(Main.instance,ModGuiHandler.MOD_TILE_ENTITY_GUI,event.world, 10, 10, 10);
-						Minecraft mc = Minecraft.getMinecraft();
-						mc.displayGuiScreen(new EEmodGui(mc.currentScreen));
-						System.out.println("Success");
-				}
-			}
-		}		
-	}
-	
-/************************************************************************************/	
-	private GuiButton btnShowNewGui = new GuiButton(223, 0, 0, "EEmod Test");
-	@SubscribeEvent
-	public void guiScreenShow(InitGuiEvent.Post event){
-		if(event.gui instanceof GuiOptions){
-			GuiScreen screen = event.gui;
-//			for(Object o : event.buttonList)
-//			{
-//				GuiButton btn = (GuiButton)o;
-//				if(btn.id == 4) //退出游戏按钮的id
-//					btn.xPosition = (int)(screen.width * 0.75);
-//				if(btn.id == 0) //选项按钮的id
-//				{
-//					btn.yPosition = (int)(screen.height * 0.7);
-//					btn.xPosition = (int)(screen.width * 0.75);
-//				}
-//				if(btn.id == 1) //选项按钮的id
-//				{
-//					btn.yPosition = (int)(screen.height * 0.5* 0.5);
-//					btn.xPosition = (int)(screen.width * 0.5* 0.5);
-//				}
-//			}
-//			btnShowNewGui.xPosition = (int)(screen.width * 0.5) - 100;
-//			btnShowNewGui.yPosition = (int)(screen.height * 0.8);
-//			btnShowNewGui.width =  200;	
-			event.buttonList.add(btnShowNewGui);			
-		}
-	}
-
-	@SubscribeEvent
-	public void guiClickButton(ActionPerformedEvent.Post event){
-		if(event.button == btnShowNewGui){
-			Minecraft mc = Minecraft.getMinecraft();
-			mc.displayGuiScreen(new EEmodGui(mc.currentScreen));
-		}
-		
-	}		
-/*************************************************************************************/
-//	@SubscribeEvent
-//	public void playerHealth(RenderGameOverlayEvent.Pre event) {
-//		if(event.type == ElementType.HEALTH)
-//		{
-//			event.setCanceled(true); //取消掉事件来阻止原图标的绘制
-//			int width = event.resolution.getScaledWidth();
-//			int height = event.resolution.getScaledHeight();
-//			Minecraft mc = Minecraft.getMinecraft();
-//			String hp = String.format("Health: %d/%d",
-//							MathHelper.ceiling_float_int(mc.thePlayer.getHealth()),
-//							MathHelper.ceiling_double_int(mc.thePlayer.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue()));
-//			FontRenderer fontRenderer = mc.fontRenderer;
-//			fontRenderer.drawStringWithShadow(hp, width / 2 - 91, height - GuiIngameForge.left_height, 0xFFFFFF);
-//			//字体渲染器在渲染时会重新绑定到字型纹理上,由于一些"编程失误",HUD在下一步绘制时不会重新绑定纹理,因此需要我们在此手动绑定.
-//			mc.renderEngine.bindTexture(Gui.icons);
-//		}
-//	}
-//
-//	@SubscribeEvent
-//	public void playerName(RenderGameOverlayEvent.Text event) {
-//		event.left.add(0, String.format("Welcome, %s!", Minecraft.getMinecraft().thePlayer.getCommandSenderName()));
-//	}
 }
 	
 

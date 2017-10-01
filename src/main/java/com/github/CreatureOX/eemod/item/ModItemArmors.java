@@ -24,8 +24,7 @@ public class ModItemArmors extends ItemArmor{
 	}
 	
 	@Override
-	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type)
-	{
-	    return Main.MODID + ":textures/armors/" + this.textureName + "_" + (this.armorType == 2 ? "2" : "1") + ".png";
+	public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type){
+	    return Main.MODID + ":textures/armor/" + this.textureName + "_" + (this.armorType == 2 ? "2" : "1") + ".png";
 	}
 }
