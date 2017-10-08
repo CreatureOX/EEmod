@@ -1,9 +1,0 @@
-package com.github.CreatureOX.eemod.world.gen;
-
-import net.minecraft.init.Blocks;
-import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
-
-public class ModWorldGeneratorPurple {
-
-}

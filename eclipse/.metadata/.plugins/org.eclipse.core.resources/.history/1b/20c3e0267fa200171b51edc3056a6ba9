@@ -1,7 +1,0 @@
-package com.github.CreatureOX.eemod.item;
-
-import net.minecraft.item.ItemFood;
-
-public class ModItemFoods extends ItemFood{
-
-}

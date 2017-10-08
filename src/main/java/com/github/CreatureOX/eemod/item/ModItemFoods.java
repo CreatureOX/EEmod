@@ -18,7 +18,7 @@ public class ModItemFoods extends ItemFood{
 	
 	public ModItemFoods(int p_i45340_1_, boolean p_i45340_2_) {
 		super(p_i45340_1_, p_i45340_2_);
-		// TODO 自动生成的构造函数存根
+		// TODO 
 	}
 
 	public ModItemFoods(String unlocalizedName, int healAmount, float saturationModifier, boolean wolvesFavorite, PotionEffect... effects) {

@@ -1,6 +1,7 @@
 package com.github.CreatureOX.eemod.events;
 
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.GL11;
 
 import com.github.CreatureOX.eemod.Main;
 import com.github.CreatureOX.eemod.achievement.ModAchievements;
@@ -27,6 +28,7 @@ import net.minecraft.client.gui.GuiIngameMenu;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiOptions;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -36,6 +38,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.MathHelper;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.GuiIngameForge;
 import net.minecraftforge.client.event.GuiScreenEvent.ActionPerformedEvent;
@@ -46,6 +49,8 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
+
+import org.lwjgl.opengl.GL11;
 
 public class ModEvents {
 
@@ -119,13 +124,29 @@ public class ModEvents {
             player.addChatMessage(new ChatComponentTranslation("chat.eemod.time", world.getTotalWorldTime()));
         }
         
-		if (Keyboard.getEventKey() == Keyboard.KEY_K) //��ȡ���µİ������ж�
+		if (Keyboard.getEventKey() == Keyboard.KEY_K) //��ȡ���µİ������ж�
         {
 		Minecraft mc = Minecraft.getMinecraft();
 		mc.displayGuiScreen(new EEmodGui(mc.currentScreen));
         }
-    }
+    } 
     
+//    @SubscribeEvent
+//    public void playerHealth(RenderGameOverlayEvent.Pre event) {
+//    	if(event.type == ElementType.HEALTH)
+//    	{
+//    		int width = event.resolution.getScaledWidth();
+//    		int height = event.resolution.getScaledHeight();
+//    		Minecraft mc = Minecraft.getMinecraft();
+//    		String hp = String.format("Health: %d/%d",
+//    						MathHelper.ceiling_float_int(mc.thePlayer.getHealth()),
+//    						MathHelper.ceiling_double_int(mc.thePlayer.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue()));
+//    		FontRenderer fontRenderer = mc.fontRenderer;
+//    		fontRenderer.drawStringWithShadow(hp, width / 2 + 100, height - GuiIngameForge.left_height, 0xFFFFFF);
+//    		//字体渲染器在渲染时会重新绑定到字型纹理上,由于一些"编程失误",HUD在下一步绘制时不会重新绑定纹理,因此需要我们在此手动绑定.
+//    		mc.renderEngine.bindTexture(Gui.icons);
+//    	}
+//    }
 }
 	
 
