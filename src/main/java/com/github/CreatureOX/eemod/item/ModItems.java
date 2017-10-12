@@ -44,6 +44,7 @@ public class ModItems {
 	public static Item FlooPowder;
 	public static Item Portkey;
 	public static Item VanishingCabinet;
+	public static Item Besom;
 	
 	public static ToolMaterial MAGIC = EnumHelper.addToolMaterial("MAGIC", 3, 1561/2, 12.0F, 0, 22);
 	public static ArmorMaterial MAGIC_ARMOR = EnumHelper.addArmorMaterial("MAGIC_ARRMOR", 16,  new int[] {3,8,6,3}, 30);
@@ -53,6 +54,7 @@ public class ModItems {
 		experimentItem = new Item().setUnlocalizedName("experimentItem").setTextureName(Main.MODID+":experimentItem").setCreativeTab(CreativeTabs.tabMisc);
 		hammerItem     = new Hammer().setUnlocalizedName("hammerItem").setTextureName(Main.MODID+":hammer").setCreativeTab(CreativeTabs.tabMisc);		
 		MagicWand      = new MagicWand().setUnlocalizedName("magicwandItem").setTextureName(Main.MODID+":magicwand").setCreativeTab(ModCreativeTabs.tabEEmod);
+		Besom		   =new Besom().setUnlocalizedName("besomItem").setTextureName(Main.MODID+":besomItem").setCreativeTab(CreativeTabs.tabMisc);
 		//Ore
 		PurpleIngot = new Item().setUnlocalizedName("purpleIngot").setTextureName(Main.MODID+":purpleIngot").setCreativeTab(ModCreativeTabs.tabEEmod);
 		//Food
@@ -69,7 +71,7 @@ public class ModItems {
 		InvisibleCloak		=new Item().setUnlocalizedName("invisiblecloakItem").setTextureName(Main.MODID+":invisiblecloakItem").setCreativeTab(CreativeTabs.tabMisc);;
 		FlooPowder			=new Item().setUnlocalizedName("floopowderItem").setTextureName(Main.MODID+":floopowderItem").setCreativeTab(CreativeTabs.tabMisc);;
 		Portkey				=new Item().setUnlocalizedName("portkeyItem").setTextureName(Main.MODID+":portkeyItem").setCreativeTab(CreativeTabs.tabMisc);;
-		VanishingCabinet	=new Item().setUnlocalizedName("vanishingcabinetItem").setTextureName(Main.MODID+":vanishingcabinetItem").setCreativeTab(CreativeTabs.tabMisc);;
+		VanishingCabinet	=new Item().setUnlocalizedName("vanishingcabinetItem").setTextureName(Main.MODID+":vanishingcabinetItem").setCreativeTab(CreativeTabs.tabMisc);
 		
 		GameRegistry.registerItem(experimentItem, "experimentItem");	
 		GameRegistry.registerItem(hammerItem, "hammerItem");		

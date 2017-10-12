@@ -1,0 +1,13 @@
+package com.github.CreatureOX.eemod.entity;
+
+import net.minecraft.entity.Entity;
+import net.minecraft.world.World;
+
+public class Besom extends Entity{
+
+	public Besom(World p_i1582_1_) {
+		super(p_i1582_1_);
+		// TODO 自动生成的构造函数存根
+	}
+
+}

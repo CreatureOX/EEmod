@@ -1,0 +1,97 @@
+package com.github.CreatureOX.eemod.item;
+
+import com.github.CreatureOX.eemod.Main;
+import com.github.CreatureOX.eemod.block.ModBlocks;
+import com.github.CreatureOX.eemod.creativetab.ModCreativeTabs;
+
+import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
+import net.minecraftforge.common.util.EnumHelper;
+
+public class ModItems {
+	//Items
+	public static Item experimentItem;
+	public static Item hammerItem;
+	public static Item MagicWand;
+	public static Item PurpleIngot;
+	//Foods
+	public static ItemFood PoisonedApple;
+	public static ItemFood Oatmeal;
+	public static ItemFood Bun;
+	public static ItemFood BertieBottsEveryFlavorBeans;
+	public static ItemFood ButterBeer;
+	public static ItemFood CholocateFrog;
+	//Swords
+	public static ItemSword ColorfulSword;
+	//Armors
+	public static Item magicHelmet;
+	public static Item magicChestplate;
+	public static Item magicLeggings;
+	public static Item magicBoots;
+	//Others
+	public static Item SortingHat;
+	public static Item InvisibleCloak;
+	public static Item FlooPowder;
+	public static Item Portkey;
+	public static Item VanishingCabinet;
+	public static Item Besom;
+	
+	public static ToolMaterial MAGIC = EnumHelper.addToolMaterial("MAGIC", 3, 1561/2, 12.0F, 0, 22);
+	public static ArmorMaterial MAGIC_ARMOR = EnumHelper.addArmorMaterial("MAGIC_ARRMOR", 16,  new int[] {3,8,6,3}, 30);
+	
+	public static final void init(){
+		//Item
+		experimentItem = new Item().setUnlocalizedName("experimentItem").setTextureName(Main.MODID+":experimentItem").setCreativeTab(CreativeTabs.tabMisc);
+		hammerItem     = new Hammer().setUnlocalizedName("hammerItem").setTextureName(Main.MODID+":hammer").setCreativeTab(CreativeTabs.tabMisc);		
+		MagicWand      = new MagicWand().setUnlocalizedName("magicwandItem").setTextureName(Main.MODID+":magicwand").setCreativeTab(ModCreativeTabs.tabEEmod);
+		//Ore
+		PurpleIngot = new Item().setUnlocalizedName("purpleIngot").setTextureName(Main.MODID+":purpleIngot").setCreativeTab(ModCreativeTabs.tabEEmod);
+		//Food
+		//PoisonedApple = new ModItemFoods("poisonedappleItem", 2, 0.1f, false,null).setAlwaysEdible();
+		//poison effect to the item which lasts for 10 seconds (!), has an amplifier of 0 (Level 1 of the potion);
+		PoisonedApple               = new ModItemFoods("poisonedappleItem", 2, 0.2f, false,new PotionEffect(Potion.poison.id, 200, 4)).setAlwaysEdible();
+		Oatmeal                     = new ModItemFoods("oatmealItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
+		Bun                         = new ModItemFoods("bunItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
+		BertieBottsEveryFlavorBeans = new ModItemFoods("flavorbeansItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
+		ButterBeer                  = new ModItemFoods("butterbeerItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
+		CholocateFrog               = new ModItemFoods("cholocatefrogItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
+		//Others
+		SortingHat			=new Item().setUnlocalizedName("sortinghatItem").setTextureName(Main.MODID+":sortinghatItem").setCreativeTab(CreativeTabs.tabMisc);;
+		InvisibleCloak		=new Item().setUnlocalizedName("invisiblecloakItem").setTextureName(Main.MODID+":invisiblecloakItem").setCreativeTab(CreativeTabs.tabMisc);;
+		FlooPowder			=new Item().setUnlocalizedName("floopowderItem").setTextureName(Main.MODID+":floopowderItem").setCreativeTab(CreativeTabs.tabMisc);;
+		Portkey				=new Item().setUnlocalizedName("portkeyItem").setTextureName(Main.MODID+":portkeyItem").setCreativeTab(CreativeTabs.tabMisc);;
+		VanishingCabinet	=new Item().setUnlocalizedName("vanishingcabinetItem").setTextureName(Main.MODID+":vanishingcabinetItem").setCreativeTab(CreativeTabs.tabMisc);
+		Besom				=new Besom().setUnlocalizedName("besomItem").setTextureName(Main.MODID+":besomItem").setCreativeTab(CreativeTabs.tabMisc);
+		
+		GameRegistry.registerItem(experimentItem, "experimentItem");	
+		GameRegistry.registerItem(hammerItem, "hammerItem");		
+		GameRegistry.registerItem(MagicWand, "MagicWand");
+		GameRegistry.registerItem(PurpleIngot, "PurpleIngot");
+		
+		GameRegistry.registerItem(PoisonedApple, "PoisonedApple");
+		GameRegistry.registerItem(Oatmeal, "Oatmeal");
+		GameRegistry.registerItem(Bun, "Bun");
+		GameRegistry.registerItem(BertieBottsEveryFlavorBeans, "BertieBottsEveryFlavorBeans");
+		GameRegistry.registerItem(ButterBeer, "ButterBeer");
+		GameRegistry.registerItem(CholocateFrog, "CholocateFrog");		
+		
+		GameRegistry.registerItem(ColorfulSword = new ModItemSwords("colorfulSword", MAGIC), "ColorfulSword");
+			
+		GameRegistry.registerItem(magicHelmet     = new ModItemArmors("magicHelmet", MAGIC_ARMOR, "magic_armor", 0), "magicHelmet"); //0 for helmet
+		GameRegistry.registerItem(magicChestplate = new ModItemArmors("magicChestplate", MAGIC_ARMOR, "magic_armor", 1), "magicChestplate"); // 1 for chestplate
+		GameRegistry.registerItem(magicLeggings   = new ModItemArmors("magicLeggings", MAGIC_ARMOR, "magic_armor", 2), "magicLeggings"); // 2 for leggings
+		GameRegistry.registerItem(magicBoots      = new ModItemArmors("magicBoots", MAGIC_ARMOR, "magic_armor", 3), "magicBoots"); // 3 for boots
+
+		
+	}
+}
