@@ -39,24 +39,10 @@ public class EntityBesom extends Entity{
 
 	@Override
 	protected void entityInit() {
-        this.dataWatcher.addObject(17, new Integer(0));
-        this.dataWatcher.addObject(18, new Integer(1));
-        this.dataWatcher.addObject(19, new Float(0.0F));
+		// TODO 自动生成的方法存根
 		
 	}
 
-    public EntityBesom(World world, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
-    {
-        this(world);
-        this.setPosition(p_i1705_2_, p_i1705_4_ + (double)this.yOffset, p_i1705_6_);
-        this.motionX = 0.0D;
-        this.motionY = 0.0D;
-        this.motionZ = 0.0D;
-        this.prevPosX = p_i1705_2_;
-        this.prevPosY = p_i1705_4_;
-        this.prevPosZ = p_i1705_6_;
-    }
-    
 	@Override
 	protected void readEntityFromNBT(NBTTagCompound p_70037_1_) {
 		// TODO 自动生成的方法存根

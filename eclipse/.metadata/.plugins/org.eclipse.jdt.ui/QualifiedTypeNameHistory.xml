@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.github.CreatureOX.eemod.item.ModItemCraftings"/>
 <fullyQualifiedTypeName name="net.minecraft.client.settings.KeyBinding"/>
 <fullyQualifiedTypeName name="com.github.CreatureOX.eemod.client.ModKeyBinding"/>
-<fullyQualifiedTypeName name="cpw.mods.fml.relauncher.Side"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.gameevent.InputEvent"/>
 <fullyQualifiedTypeName name="com.github.CreatureOX.eemod.client.ModKeyBindings"/>
 <fullyQualifiedTypeName name="net.minecraft.util.ChatComponentTranslation"/>
@@ -23,7 +21,6 @@
 <fullyQualifiedTypeName name="com.github.CreatureOX.eemod.item.ModItems"/>
 <fullyQualifiedTypeName name="net.minecraft.client.resources.I18n"/>
 <fullyQualifiedTypeName name="net.minecraft.client.Minecraft"/>
-<fullyQualifiedTypeName name="cpw.mods.fml.relauncher.SideOnly"/>
 <fullyQualifiedTypeName name="net.minecraft.init.Items"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="cpw.mods.fml.common.network.IGuiHandler"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="net.minecraft.entity.Entity"/>
 <fullyQualifiedTypeName name="com.github.CreatureOX.eemod.entity.EntityBesom"/>
 <fullyQualifiedTypeName name="net.minecraft.creativetab.CreativeTabs"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.common.registry.EntityRegistry"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.relauncher.SideOnly"/>
+<fullyQualifiedTypeName name="cpw.mods.fml.relauncher.Side"/>
 </qualifiedTypeNameHistroy>

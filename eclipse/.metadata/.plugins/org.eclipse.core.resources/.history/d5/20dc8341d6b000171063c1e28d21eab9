@@ -1,0 +1,36 @@
+package com.github.CreatureOX.eemod.entity;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.item.EntityBoat;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+
+public class EntityBesom extends EntityBoat{
+    /** true if no player in boat */
+    private boolean isBesomEmpty;
+    private double speedMultiplier;
+    private int besomPosRotationIncrements;
+    private double besomX;
+    private double besomY;
+    private double besomZ;
+    private double besomYaw;
+    private double besomPitch;
+    @SideOnly(Side.CLIENT)
+    private double velocityX;
+    @SideOnly(Side.CLIENT)
+    private double velocityY;
+    @SideOnly(Side.CLIENT)
+    private double velocityZ;
+	public EntityBesom(World p_i1582_1_) {
+		super(p_i1582_1_);
+        setSize(0.9F, 0.9F);
+	}
+
+	public EntityBesom(World par2World, double posX, double posY, double posZ,EntityPlayer par3EntityPlayer) {
+			super(par2World);
+	}
+
+}

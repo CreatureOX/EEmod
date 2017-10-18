@@ -14,7 +14,7 @@
 注: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
 1 个警告
 
-:processResources UP-TO-DATE
+:processResources
 :classes
 :jar
 :compileTestJava UP-TO-DATE
@@ -32,4 +32,4 @@
 
 BUILD SUCCESSFUL
 
-Total time: 17.816 secs
+Total time: 3 mins 26.76 secs
