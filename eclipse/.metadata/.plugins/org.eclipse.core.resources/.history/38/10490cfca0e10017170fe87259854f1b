@@ -1,0 +1,7 @@
+package com.github.CreatureOX.eemod.client.gui;
+
+import net.minecraftforge.client.GuiIngameForge;
+
+public class GuiMagic extends GuiIngameForge{
+
+}

@@ -1,0 +1,14 @@
+package com.github.CreatureOX.eemod.events;
+
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraftforge.client.event.RenderGameOverlayEvent;
+
+public class EEmodRenderGameOverlayEvent extends RenderGameOverlayEvent{
+
+	public EEmodRenderGameOverlayEvent(float partialTicks,
+			ScaledResolution resolution, int mouseX, int mouseY) {
+		super(partialTicks, resolution, mouseX, mouseY);
+		// TODO 自动生成的构造函数存根
+	}
+
+}

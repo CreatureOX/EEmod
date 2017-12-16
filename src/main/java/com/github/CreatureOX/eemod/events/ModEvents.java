@@ -52,7 +52,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
 
 import org.lwjgl.opengl.GL11;
 
-public class ModEvents {
+public class ModEvents extends Gui{
 
 	@EventHandler
 	public static final void init(){
@@ -131,22 +131,24 @@ public class ModEvents {
         }
     } 
     
-//    @SubscribeEvent
-//    public void playerHealth(RenderGameOverlayEvent.Pre event) {
-//    	if(event.type == ElementType.HEALTH)
-//    	{
-//    		int width = event.resolution.getScaledWidth();
-//    		int height = event.resolution.getScaledHeight();
-//    		Minecraft mc = Minecraft.getMinecraft();
-//    		String hp = String.format("Health: %d/%d",
-//    						MathHelper.ceiling_float_int(mc.thePlayer.getHealth()),
-//    						MathHelper.ceiling_double_int(mc.thePlayer.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue()));
-//    		FontRenderer fontRenderer = mc.fontRenderer;
-//    		fontRenderer.drawStringWithShadow(hp, width / 2 + 100, height - GuiIngameForge.left_height, 0xFFFFFF);
-//    		//字体渲染器在渲染时会重新绑定到字型纹理上,由于一些"编程失误",HUD在下一步绘制时不会重新绑定纹理,因此需要我们在此手动绑定.
-//    		mc.renderEngine.bindTexture(Gui.icons);
-//    	}
-//    }
+    @SubscribeEvent
+    public void playerHealth(RenderGameOverlayEvent.Pre event) {
+    	if(event.type == ElementType.HEALTH)
+    	{
+    		int width = event.resolution.getScaledWidth();
+    		int height = event.resolution.getScaledHeight();
+    		Minecraft mc = Minecraft.getMinecraft();
+    		//String hp = String.format("Magic: %d/%d",
+    		//				MathHelper.ceiling_float_int(mc.thePlayer.getHealth()),
+    		//				MathHelper.ceiling_double_int(mc.thePlayer.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue()));
+    		//FontRenderer fontRenderer = mc.fontRenderer;
+    		//fontRenderer.drawStringWithShadow(hp, width / 2 + 25, height - GuiIngameForge.left_height-10, 0xFFFFFF);
+    		//字体渲染器在渲染时会重新绑定到字型纹理上 HUD在下一步绘制时不会重新绑定纹理,因此需要我们在此手动绑定.
+    		mc.renderEngine.bindTexture(Gui.icons);
+    		drawTexturedModalRect(width / 2-182/2,height - GuiIngameForge.left_height-6,0,79,182,5);
+    		//参数分别为x,y,u,v,    x,y为绘制在屏幕上的左上角坐标  u，v为纹理的左上角坐标 w,h为纹理的宽、高
+    	}
+    }
 }
 	
 
