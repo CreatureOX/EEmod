@@ -1,56 +1,30 @@
 package com.github.CreatureOX.eemod.events;
 
-import org.lwjgl.input.Keyboard;
-import org.lwjgl.opengl.GL11;
-
-import com.github.CreatureOX.eemod.Main;
 import com.github.CreatureOX.eemod.achievement.ModAchievements;
 import com.github.CreatureOX.eemod.client.ModKeyBindings;
 import com.github.CreatureOX.eemod.client.gui.EEmodCursesGui;
 import com.github.CreatureOX.eemod.client.gui.EEmodGui;
-import com.github.CreatureOX.eemod.item.MagicWand;
-import com.github.CreatureOX.eemod.item.ModItems;
-
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.InputEvent;
-import cpw.mods.fml.common.gameevent.InputEvent.KeyInputEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.GuiIngameMenu;
-import net.minecraft.client.gui.GuiMainMenu;
-import net.minecraft.client.gui.GuiOptions;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.client.GuiIngameForge;
-import net.minecraftforge.client.event.GuiScreenEvent.ActionPerformedEvent;
-import net.minecraftforge.client.event.GuiScreenEvent.InitGuiEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.Action;
-
-import org.lwjgl.opengl.GL11;
+import org.lwjgl.input.Keyboard;
 
 public class ModEvents extends Gui{
 
@@ -115,17 +89,14 @@ public class ModEvents extends Gui{
 	
     @SideOnly(Side.CLIENT)
     @SubscribeEvent
-    public void onKeyInput(InputEvent.KeyInputEvent event)
-    {
-        if (ModKeyBindings.showTime.isPressed())
-        {
+    public void onKeyInput(InputEvent.KeyInputEvent event) {
+        if (ModKeyBindings.showTime.isPressed()) {
             EntityPlayer player = Minecraft.getMinecraft().thePlayer;
             World world = Minecraft.getMinecraft().theWorld;
             player.addChatMessage(new ChatComponentTranslation("chat.eemod.time", world.getTotalWorldTime()));
         }
         
-		if (Keyboard.getEventKey() == Keyboard.KEY_K) //��ȡ���µİ������ж�
-        {
+		if (Keyboard.getEventKey() == Keyboard.KEY_K){
 		Minecraft mc = Minecraft.getMinecraft();
 		mc.displayGuiScreen(new EEmodGui(mc.currentScreen));
         }
@@ -133,8 +104,7 @@ public class ModEvents extends Gui{
     
     @SubscribeEvent
     public void playerHealth(RenderGameOverlayEvent.Pre event) {
-    	if(event.type == ElementType.HEALTH)
-    	{
+    	if(event.type == ElementType.HEALTH) {
     		int width = event.resolution.getScaledWidth();
     		int height = event.resolution.getScaledHeight();
     		Minecraft mc = Minecraft.getMinecraft();

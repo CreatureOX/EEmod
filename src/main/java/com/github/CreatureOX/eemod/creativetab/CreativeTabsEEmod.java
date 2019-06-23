@@ -1,14 +1,12 @@
 package com.github.CreatureOX.eemod.creativetab;
 
 import com.github.CreatureOX.eemod.item.ModItems;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class CreativeTabsEEmod extends CreativeTabs
-{
-    public CreativeTabsEEmod()
-    {
+public class CreativeTabsEEmod extends CreativeTabs {
+
+    public CreativeTabsEEmod() {
         super("eemod");
         this.setBackgroundImageName("eemod.png");
     }

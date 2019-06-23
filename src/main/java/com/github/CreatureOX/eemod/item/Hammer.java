@@ -15,7 +15,7 @@ public class Hammer extends Item{
 	    if (par3EntityLivingBase.worldObj.isRemote) {
 	        return true;
 	    }
-	    float Angle = (par3EntityLivingBase.rotationYaw/ 180F) * 3.141593F;
+		float Angle = (par3EntityLivingBase.rotationYaw/ 180F) * 3.141593F;
 	    float x = 3f * -MathHelper.sin(Angle);
 	    float y = 1f;
 	    float z = 3f * MathHelper.cos(Angle);
@@ -26,14 +26,20 @@ public class Hammer extends Item{
 	@Override
 	public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World,EntityPlayer par3EntityPlayer) {
 	    if (!par2World.isRemote) {
-	        EntityTNTPrimed entity = new EntityTNTPrimed(par2World, par3EntityPlayer.posX,par3EntityPlayer.posY + par3EntityPlayer.getEyeHeight(), par3EntityPlayer.posZ, par3EntityPlayer);// getEyeHeight·½·¨ÊÇ»ñÈ¡ÎïÌåÍ·²¿µ½½Åµ×µÄ¾àÀë
-	        float angle = (par3EntityPlayer.rotationYaw / 180F) * 3.141593F; // Ë®Æ½·½ÏòµÄ½Ç¶È
-	        float angle2 = (-par3EntityPlayer.rotationPitch / 180F) * 3.141593F; // ´¹Ö±·½ÏòµÄÑö½Ç
+		    // getEyeHeightæ–¹æ³•æ˜¯è·å–ç‰©ä½“çš„"çœ¼é«˜",å³å¤´éƒ¨åˆ°è„šåº•çš„è·ç¦»
+	        EntityTNTPrimed entity = new EntityTNTPrimed(par2World, par3EntityPlayer.posX,par3EntityPlayer.posY + par3EntityPlayer.getEyeHeight(), par3EntityPlayer.posZ, par3EntityPlayer);
+		    // æ°´å¹³æ–¹å‘çš„è§’åº¦
+		    float angle = (par3EntityPlayer.rotationYaw / 180F) * 3.141593F;
+		    // å‚ç›´æ–¹å‘çš„ä»°è§’
+		    float angle2 = (-par3EntityPlayer.rotationPitch / 180F) * 3.141593F;
+		    // é£è¡Œé€Ÿåº¦
 	        final float speed = 2f;
-	        entity.motionY = speed * MathHelper.sin(angle2); // Ëã³öÈı¸ö·½ÏòÉÏµÄËÙ¶È,ÎªÁË·½±ãÔÄ¶ÁÎÒÏÈ¼ÆËãµÄYÖá·ÖËÙ¶È
-	        entity.motionX = speed * MathHelper.cos(angle2) * -MathHelper.sin(angle); // ¸ù¾İÑö½ÇËã³öËÙ¶ÈÔÚXZÆ½ÃæÉÏµÄÍ¶Ó°,ÔÙÕı½»·Ö½âÍ¶Ó°
+		    // æ ¹æ®ä»°è§’ç®—å‡ºé€Ÿåº¦åœ¨XZå¹³é¢ä¸Šçš„æŠ•å½±,å†æ­£äº¤åˆ†è§£æŠ•å½±
+	        entity.motionY = speed * MathHelper.sin(angle2);
+	        entity.motionX = speed * MathHelper.cos(angle2) * -MathHelper.sin(angle);
 	        entity.motionZ = speed * MathHelper.cos(angle2) * MathHelper.cos(angle);
-	        par2World.spawnEntityInWorld(entity); // ·ÅÖÃÊµÌå
+		    // æ”¾ç½®å®ä½“
+	        par2World.spawnEntityInWorld(entity);
 	    }
 	    return par1ItemStack;
 	}

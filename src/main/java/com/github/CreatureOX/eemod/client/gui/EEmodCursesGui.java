@@ -1,12 +1,7 @@
 package com.github.CreatureOX.eemod.client.gui;
 
-import org.lwjgl.input.Keyboard;
-
-import com.github.CreatureOX.eemod.Main;
-
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.util.ResourceLocation;
 
 public class EEmodCursesGui extends GuiScreen{
@@ -17,7 +12,7 @@ public class EEmodCursesGui extends GuiScreen{
 	private GuiButton btnCurse3;
     private GuiButton btnClose;
 	
-    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg"); //第一个参数是modid
+    private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg");
     
     public EEmodCursesGui(GuiScreen parent){
             parentScreen = parent;
@@ -32,17 +27,18 @@ public class EEmodCursesGui extends GuiScreen{
     }
 
     public void drawScreen(int par1, int par2, float par3){
-            drawDefaultBackground();
-            mc.renderEngine.bindTexture(texture); //绑定纹理
-            func_146110_a(0, 0, 0, 0, width, height, 750, 600);
-            super.drawScreen(par1,par2,par3);
+    	drawDefaultBackground();
+	    //绑定纹理
+	    mc.renderEngine.bindTexture(texture);
+	    func_146110_a(0, 0, 0, 0, width, height, 750, 600);
+	    super.drawScreen(par1,par2,par3);
     }
     
     @Override
     protected void actionPerformed(GuiButton par1GuiButton){
-             if(par1GuiButton.id == 0){  
-                    mc.displayGuiScreen(parentScreen);
-             }
+    	if(par1GuiButton.id == 0){
+    		mc.displayGuiScreen(parentScreen);
+    	}
     }
  
 }

@@ -13,7 +13,6 @@ public class ModItemArmors extends ItemArmor{
 	public ModItemArmors(ArmorMaterial p_i45325_1_, int p_i45325_2_,
 			int p_i45325_3_) {
 		super(p_i45325_1_, p_i45325_2_, p_i45325_3_);
-		// TODO 自动生成的构造函数存根
 	}
 	
 	public ModItemArmors(String unlocalizedName, ArmorMaterial material, String textureName, int type) {

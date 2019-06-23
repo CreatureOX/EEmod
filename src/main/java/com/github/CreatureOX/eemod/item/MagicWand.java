@@ -1,22 +1,8 @@
 package com.github.CreatureOX.eemod.item;
 
-import com.github.CreatureOX.eemod.Main;
-import com.github.CreatureOX.eemod.block.BasicBlock;
-import com.github.CreatureOX.eemod.client.gui.EEmodCursesGui;
-import com.github.CreatureOX.eemod.client.gui.EEmodGui;
-
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.RenderGlobal;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.MovingObjectPosition;
-import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
 
 public class MagicWand extends Item{

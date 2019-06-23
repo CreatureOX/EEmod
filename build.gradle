@@ -61,4 +61,13 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+apply plugin: 'idea'
+
+idea {
+    module {
+        inheritOutputDirs = true
+    }
+}
+
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'

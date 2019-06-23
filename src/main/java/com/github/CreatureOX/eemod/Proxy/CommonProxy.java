@@ -1,10 +1,8 @@
 package com.github.CreatureOX.eemod.Proxy;
 
-import com.github.CreatureOX.eemod.Main;
 import com.github.CreatureOX.eemod.achievement.ModAchievements;
 import com.github.CreatureOX.eemod.block.ModBlocks;
 import com.github.CreatureOX.eemod.client.ModKeyBindings;
-import com.github.CreatureOX.eemod.client.gui.EEmodGui;
 import com.github.CreatureOX.eemod.creativetab.ModCreativeTabs;
 import com.github.CreatureOX.eemod.events.ModEvents;
 import com.github.CreatureOX.eemod.item.ModItemCraftings;
@@ -14,7 +12,6 @@ import com.github.CreatureOX.eemod.world.gen.ModWorldGenerator;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.NetworkRegistry;
 
 public class CommonProxy {
 

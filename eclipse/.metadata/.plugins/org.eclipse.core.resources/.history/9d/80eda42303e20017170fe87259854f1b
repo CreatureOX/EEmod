@@ -3,13 +3,13 @@ package com.github.CreatureOX.eemod.events;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
-import com.github.CreatureOX.eemod.Main;
-import com.github.CreatureOX.eemod.achievement.ModAchievements;
-import com.github.CreatureOX.eemod.client.ModKeyBindings;
-import com.github.CreatureOX.eemod.client.gui.EEmodCursesGui;
-import com.github.CreatureOX.eemod.client.gui.EEmodGui;
-import com.github.CreatureOX.eemod.item.MagicWand;
-import com.github.CreatureOX.eemod.item.ModItems;
+import Main;
+import ModAchievements;
+import ModKeyBindings;
+import EEmodCursesGui;
+import EEmodGui;
+import MagicWand;
+import ModItems;
 
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod.EventHandler;

@@ -1,44 +1,40 @@
 package com.github.CreatureOX.eemod.item;
 
 import com.github.CreatureOX.eemod.Main;
-import com.github.CreatureOX.eemod.block.ModBlocks;
 import com.github.CreatureOX.eemod.creativetab.ModCreativeTabs;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.common.util.EnumHelper;
 
 public class ModItems {
-	//Items
+	// Items
 	public static Item experimentItem;
 	public static Item hammerItem;
 	public static Item MagicWand;
 	public static Item PurpleIngot;
-	//Foods
+	// Foods
 	public static ItemFood PoisonedApple;
 	public static ItemFood Oatmeal;
 	public static ItemFood Bun;
 	public static ItemFood BertieBottsEveryFlavorBeans;
 	public static ItemFood ButterBeer;
 	public static ItemFood CholocateFrog;
-	//Swords
+	// Swords
 	public static ItemSword ColorfulSword;
-	//Armors
+	// Armors
 	public static Item magicHelmet;
 	public static Item magicChestplate;
 	public static Item magicLeggings;
 	public static Item magicBoots;
-	//Others
+	// Others
 	public static Item SortingHat;
 	public static Item InvisibleCloak;
 	public static Item FlooPowder;
@@ -50,16 +46,15 @@ public class ModItems {
 	public static ArmorMaterial MAGIC_ARMOR = EnumHelper.addArmorMaterial("MAGIC_ARRMOR", 16,  new int[] {3,8,6,3}, 30);
 	
 	public static final void init(){
-		//Item
+		// Item
 		experimentItem = new Item().setUnlocalizedName("experimentItem").setTextureName(Main.MODID+":experimentItem").setCreativeTab(CreativeTabs.tabMisc);
 		hammerItem     = new Hammer().setUnlocalizedName("hammerItem").setTextureName(Main.MODID+":hammer").setCreativeTab(CreativeTabs.tabMisc);		
 		MagicWand      = new MagicWand().setUnlocalizedName("magicwandItem").setTextureName(Main.MODID+":magicwand").setCreativeTab(ModCreativeTabs.tabEEmod);
 		Besom		   =new Besom().setUnlocalizedName("besomItem").setTextureName(Main.MODID+":besomItem").setCreativeTab(CreativeTabs.tabMisc);
-		//Ore
+		// Ore
 		PurpleIngot = new Item().setUnlocalizedName("purpleIngot").setTextureName(Main.MODID+":purpleIngot").setCreativeTab(ModCreativeTabs.tabEEmod);
-		//Food
-		//PoisonedApple = new ModItemFoods("poisonedappleItem", 2, 0.1f, false,null).setAlwaysEdible();
-		//poison effect to the item which lasts for 10 seconds (!), has an amplifier of 0 (Level 1 of the potion);
+		// Food
+		// poison effect to the item which lasts for 10 seconds (!), has an amplifier of 0 (Level 1 of the potion);
 		PoisonedApple               = new ModItemFoods("poisonedappleItem", 2, 0.2f, false,new PotionEffect(Potion.poison.id, 200, 4)).setAlwaysEdible();
 		Oatmeal                     = new ModItemFoods("oatmealItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
 		Bun                         = new ModItemFoods("bunItem",5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
@@ -86,11 +81,14 @@ public class ModItems {
 		GameRegistry.registerItem(CholocateFrog, "CholocateFrog");		
 		
 		GameRegistry.registerItem(ColorfulSword = new ModItemSwords("colorfulSword", MAGIC), "ColorfulSword");
-			
-		GameRegistry.registerItem(magicHelmet     = new ModItemArmors("magicHelmet", MAGIC_ARMOR, "magic_armor", 0), "magicHelmet"); //0 for helmet
-		GameRegistry.registerItem(magicChestplate = new ModItemArmors("magicChestplate", MAGIC_ARMOR, "magic_armor", 1), "magicChestplate"); // 1 for chestplate
-		GameRegistry.registerItem(magicLeggings   = new ModItemArmors("magicLeggings", MAGIC_ARMOR, "magic_armor", 2), "magicLeggings"); // 2 for leggings
-		GameRegistry.registerItem(magicBoots      = new ModItemArmors("magicBoots", MAGIC_ARMOR, "magic_armor", 3), "magicBoots"); // 3 for boots
+		// 0 for helmet
+		GameRegistry.registerItem(magicHelmet = new ModItemArmors("magicHelmet", MAGIC_ARMOR, "magic_armor", 0), "magicHelmet");
+		// 1 for chestplate
+		GameRegistry.registerItem(magicChestplate = new ModItemArmors("magicChestplate", MAGIC_ARMOR, "magic_armor", 1), "magicChestplate");
+		// 2 for leggings
+		GameRegistry.registerItem(magicLeggings = new ModItemArmors("magicLeggings", MAGIC_ARMOR, "magic_armor", 2), "magicLeggings");
+		// 3 for boots
+		GameRegistry.registerItem(magicBoots = new ModItemArmors("magicBoots", MAGIC_ARMOR, "magic_armor", 3), "magicBoots");
 
 		
 	}

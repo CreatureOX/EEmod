@@ -1,7 +1,7 @@
 package com.github.CreatureOX.eemod.client;
 
-import net.minecraft.client.settings.KeyBinding;
 import cpw.mods.fml.client.registry.ClientRegistry;
+import net.minecraft.client.settings.KeyBinding;
 import org.lwjgl.input.Keyboard;
 
 public class ModKeyBindings {
