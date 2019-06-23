@@ -16,10 +16,8 @@ public class ModWorldGenerator {
 	}
 	
     @SubscribeEvent
-    public void ModOreGenPost(OreGenEvent.Post event)
-    {
-        if ((event.worldX!=this.posX)&&(event.worldZ!=this.posZ))
-        {
+    public void ModOreGenPost(OreGenEvent.Post event) {
+        if ((event.worldX!=this.posX)&&(event.worldZ!=this.posZ)) {
             this.posX = event.worldX;
             this.posZ = event.worldZ;
             ModgeneratorPurple.generate(event.world, event.rand, 0,event.worldX, event.worldZ);

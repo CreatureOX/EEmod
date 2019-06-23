@@ -13,12 +13,15 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public class Main {
 
     public static final String MODID = "EEmod";
-    public static final String VERSION = "1.0";
-    
+    public static final String VERSION = "0.1";
+
+    private static final String CLIENT_SIDE = "com.github.CreatureOX.eemod.Proxy.ClientProxy";
+    private static final String SERVER_SIDE = "com.github.CreatureOX.eemod.Proxy.ServerProxy";
+
     @Instance
     public static Main instance = new Main();
 
-    @SidedProxy(clientSide="ClientProxy", serverSide="ServerProxy")
+    @SidedProxy(clientSide = CLIENT_SIDE, serverSide = SERVER_SIDE)
     public static CommonProxy proxy;
     
     @EventHandler

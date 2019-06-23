@@ -9,6 +9,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 
 public class EntityBesom extends Entity{
+
     /** true if no player in besom */
     private boolean isBesomEmpty;
     private double speedMultiplier;
@@ -24,6 +25,7 @@ public class EntityBesom extends Entity{
     private double velocityY;
     @SideOnly(Side.CLIENT)
     private double velocityZ;
+
 	public EntityBesom(World world) {
 		super(world);
 		this.isBesomEmpty = true;
@@ -45,8 +47,7 @@ public class EntityBesom extends Entity{
 		
 	}
 
-    public EntityBesom(World world, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_)
-    {
+    public EntityBesom(World world, double p_i1705_2_, double p_i1705_4_, double p_i1705_6_) {
         this(world);
         this.setPosition(p_i1705_2_, p_i1705_4_ + (double)this.yOffset, p_i1705_6_);
         this.motionX = 0.0D;

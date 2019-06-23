@@ -1,5 +1,6 @@
 package com.github.CreatureOX.eemod.creativetab;
 
+import com.github.CreatureOX.eemod.creativetab.creativetabs.CreativeTabsEEmod;
 import net.minecraft.creativetab.CreativeTabs;
 
 public class ModCreativeTabs {

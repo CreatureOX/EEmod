@@ -1,4 +1,4 @@
-package com.github.CreatureOX.eemod.item;
+package com.github.CreatureOX.eemod.item.items;
 
 import com.github.CreatureOX.eemod.Main;
 
@@ -10,6 +10,7 @@ public class ModItemSwords extends ItemSword{
 		super(material);
 		// TODO 
 	}
+
 	public ModItemSwords(String unlocalizedName, ToolMaterial material) {
         super(material);
         this.setUnlocalizedName(unlocalizedName);

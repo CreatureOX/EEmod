@@ -6,10 +6,13 @@ import org.lwjgl.input.Keyboard;
 
 public class ModKeyBindings {
 
+	private static final String SHOWTIME_DESCRIPTION = "key.eemod.showTime";
+	private static final String SHOWTIME_CATEGORY = "key.categories.eemod";
+
 	public static KeyBinding showTime;
 	
 	public static void init(){
-		ModKeyBindings.showTime = new KeyBinding("key.eemod.showTime",Keyboard.KEY_H,"key.categories.eemod");
+		ModKeyBindings.showTime = new KeyBinding(SHOWTIME_DESCRIPTION, Keyboard.KEY_H, SHOWTIME_CATEGORY);
 		ClientRegistry.registerKeyBinding(ModKeyBindings.showTime);
 	}
 }

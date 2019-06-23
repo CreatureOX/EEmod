@@ -1,4 +1,4 @@
-package com.github.CreatureOX.eemod.item;
+package com.github.CreatureOX.eemod.item.items;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -9,6 +9,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class Hammer extends Item{
+
 	@Override
 	public boolean hitEntity(ItemStack par1ItemStack,EntityLivingBase par2EntityLivingBase,EntityLivingBase par3EntityLivingBase) {
 	    par1ItemStack.damageItem(1, par3EntityLivingBase);

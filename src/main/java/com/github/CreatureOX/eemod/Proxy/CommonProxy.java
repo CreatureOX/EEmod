@@ -5,8 +5,8 @@ import com.github.CreatureOX.eemod.block.ModBlocks;
 import com.github.CreatureOX.eemod.client.ModKeyBindings;
 import com.github.CreatureOX.eemod.creativetab.ModCreativeTabs;
 import com.github.CreatureOX.eemod.events.ModEvents;
-import com.github.CreatureOX.eemod.item.ModItemCraftings;
-import com.github.CreatureOX.eemod.item.ModItems;
+import com.github.CreatureOX.eemod.item.craftings.ModItemCraftings;
+import com.github.CreatureOX.eemod.item.ModItemsRegistry;
 import com.github.CreatureOX.eemod.world.gen.ModWorldGenerator;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -17,7 +17,7 @@ public class CommonProxy {
 
     public void preInit(FMLPreInitializationEvent e) {
     	ModCreativeTabs.init();
-        ModItems.init();
+        ModItemsRegistry.init();
         ModBlocks.init();
 
     }

@@ -8,14 +8,14 @@
 //			for(Object o : event.buttonList)
 //			{
 //				GuiButton btn = (GuiButton)o;
-//				if(btn.id == 4) //ÍË³öÓÎÏ·°´Å¥µÄid
+//				if(btn.id == 4) //ï¿½Ë³ï¿½ï¿½ï¿½Ï·ï¿½ï¿½Å¥ï¿½ï¿½id
 //					btn.xPosition = (int)(screen.width * 0.75);
-//				if(btn.id == 0) //Ñ¡Ïî°´Å¥µÄid
+//				if(btn.id == 0) //Ñ¡ï¿½î°´Å¥ï¿½ï¿½id
 //				{
 //					btn.yPosition = (int)(screen.height * 0.7);
 //					btn.xPosition = (int)(screen.width * 0.75);
 //				}
-//				if(btn.id == 1) //Ñ¡Ïî°´Å¥µÄid
+//				if(btn.id == 1) //Ñ¡ï¿½î°´Å¥ï¿½ï¿½id
 //				{
 //					btn.yPosition = (int)(screen.height * 0.5* 0.5);
 //					btn.xPosition = (int)(screen.width * 0.5* 0.5);
@@ -37,25 +37,34 @@
 //		
 //	}		
 /*************************************************************************************/
-//	@SubscribeEvent
-//	public void playerHealth(RenderGameOverlayEvent.Pre event) {
-//		if(event.type == ElementType.HEALTH)
-//		{
-//			event.setCanceled(true); //È¡ÏûµôÊÂ¼şÀ´×èÖ¹Ô­Í¼±êµÄ»æÖÆ
-//			int width = event.resolution.getScaledWidth();
-//			int height = event.resolution.getScaledHeight();
-//			Minecraft mc = Minecraft.getMinecraft();
-//			String hp = String.format("Health: %d/%d",
-//							MathHelper.ceiling_float_int(mc.thePlayer.getHealth()),
-//							MathHelper.ceiling_double_int(mc.thePlayer.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue()));
-//			FontRenderer fontRenderer = mc.fontRenderer;
-//			fontRenderer.drawStringWithShadow(hp, width / 2 - 91, height - GuiIngameForge.left_height, 0xFFFFFF);
-//			//×ÖÌåäÖÈ¾Æ÷ÔÚäÖÈ¾Ê±»áÖØĞÂ°ó¶¨µ½×ÖĞÍÎÆÀíÉÏ,ÓÉÓÚÒ»Ğ©"±à³ÌÊ§Îó",HUDÔÚÏÂÒ»²½»æÖÆÊ±²»»áÖØĞÂ°ó¶¨ÎÆÀí,Òò´ËĞèÒªÎÒÃÇÔÚ´ËÊÖ¶¯°ó¶¨.
-//			mc.renderEngine.bindTexture(Gui.icons);
-//		}
-//	}
-//
-//	@SubscribeEvent
-//	public void playerName(RenderGameOverlayEvent.Text event) {
-//		event.left.add(0, String.format("Welcome, %s!", Minecraft.getMinecraft().thePlayer.getCommandSenderName()));
-//	}
+    @SubscribeEvent
+    public void playerHealth(RenderGameOverlayEvent.Pre event) {
+    	if(event.type == ElementType.HEALTH) {
+    		int width = event.resolution.getScaledWidth();
+    		int height = event.resolution.getScaledHeight();
+    		Minecraft mc = Minecraft.getMinecraft();
+    		//String hp = String.format("Magic: %d/%d",
+    		//				MathHelper.ceiling_float_int(mc.thePlayer.getHealth()),
+    		//				MathHelper.ceiling_double_int(mc.thePlayer.getEntityAttribute(SharedMonsterAttributes.maxHealth).getAttributeValue()));
+    		//FontRenderer fontRenderer = mc.fontRenderer;
+    		//fontRenderer.drawStringWithShadow(hp, width / 2 + 25, height - GuiIngameForge.left_height-10, 0xFFFFFF);
+    		// å­—ä½“æ¸²æŸ“å™¨åœ¨æ¸²æŸ“æ—¶ä¼šé‡æ–°ç»‘å®šåˆ°å­—å‹çº¹ç†ä¸Š HUDåœ¨ä¸‹ä¸€æ­¥ç»˜åˆ¶æ—¶ä¸ä¼šé‡æ–°ç»‘å®šçº¹ç†,å› æ­¤éœ€è¦æˆ‘ä»¬åœ¨æ­¤æ‰‹åŠ¨ç»‘å®š.
+    		mc.renderEngine.bindTexture(Gui.icons);
+    		drawTexturedModalRect(width / 2-182/2,height - GuiIngameForge.left_height-6,0,79,182,5);
+    		// å‚æ•°åˆ†åˆ«ä¸ºx,y,u,v,    x,yä¸ºç»˜åˆ¶åœ¨å±å¹•ä¸Šçš„å·¦ä¸Šè§’åæ ‡  uï¼Œvä¸ºçº¹ç†çš„å·¦ä¸Šè§’åæ ‡ w,hä¸ºçº¹ç†çš„å®½ã€é«˜
+    	}
+    }
+
+	@SubscribeEvent
+	public void playerName(RenderGameOverlayEvent.Text event) {
+		event.left.add(0, String.format("Welcome, %s!", Minecraft.getMinecraft().thePlayer.getCommandSenderName()));
+	}
+
+
+	@SubscribeEvent
+	public void test(LivingFallEvent event){
+		if(event.entityLiving instanceof EntityPlayerMP){
+			EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
+            entityPlayer.addChatMessage(new ChatComponentText("Falling Star! You fell "+event.distance+ " meters.That's cool, man!"));
+		}
+}

@@ -1,5 +1,6 @@
 package com.github.CreatureOX.eemod.client.gui;
 
+import com.github.CreatureOX.eemod.Main;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
@@ -8,10 +9,12 @@ import org.lwjgl.input.Keyboard;
 
 public class EEmodGui extends GuiScreen{
 
+	private static final String TEXTURE = "textures/gui/texture.jpg";
+
 	private GuiScreen parentScreen;
 	private GuiButton btnClose;
 	private GuiTextField tfInput;
-	private ResourceLocation texture = new ResourceLocation("eemod","textures/gui/texture.jpg");
+	private ResourceLocation texture = new ResourceLocation(Main.MODID.toLowerCase(),TEXTURE);
 
 	public EEmodGui(GuiScreen parent) {
 		// 记录父页面

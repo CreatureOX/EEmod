@@ -1,4 +1,4 @@
-package com.github.CreatureOX.eemod.item;
+package com.github.CreatureOX.eemod.item.items;
 
 import com.github.CreatureOX.eemod.Main;
 import com.github.CreatureOX.eemod.entity.EntityBesom;
@@ -11,10 +11,12 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class Besom extends Item{
+
     public Besom(){
         this.maxStackSize = 1;
         this.setCreativeTab(CreativeTabs.tabTransport);
     }
+
 	public Besom(String unlocalizedName) {
 	    this.setUnlocalizedName(unlocalizedName);
 	    this.setTextureName(Main.MODID + ":" + unlocalizedName);
