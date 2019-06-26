@@ -47,7 +47,8 @@ public class ModEvents extends Gui{
 	public void MagicWandEvent(PlayerInteractEvent event){
 		if(event.entityLiving instanceof EntityPlayerMP){
 			EntityPlayer entityPlayer = (EntityPlayer)event.entityLiving;
-			if (event.action == Action.RIGHT_CLICK_BLOCK && entityPlayer.getCurrentEquippedItem() != null){
+			if (event.action == Action.RIGHT_CLICK_BLOCK && entityPlayer.getCurrentEquippedItem() != null
+					&& entityPlayer.getCurrentEquippedItem().getItem() instanceof MagicWand){
 				Item magicWand = (MagicWand) entityPlayer.getCurrentEquippedItem().getItem();
 				if(magicWand.getUnlocalizedName().equals(ITEM_PREFIX + Constants.Items.MAGIC_WAND)){
 					switch (((MagicWand) magicWand).getCurse()){
@@ -67,8 +68,8 @@ public class ModEvents extends Gui{
 				}
 			}
 		}		
-	}	
-	
+	}
+
 	@SubscribeEvent
 	public void MagicWandCraftedEvent(PlayerEvent.ItemCraftedEvent event){
 		if(event.player instanceof EntityPlayerMP){

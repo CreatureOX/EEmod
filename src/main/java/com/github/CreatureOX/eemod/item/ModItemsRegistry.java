@@ -47,7 +47,8 @@ public class ModItemsRegistry {
 	public static Item Portkey;
 	public static Item VanishingCabinet;
 	public static Item Besom;
-	
+	public static Item EnrollmentNotice;
+
 	public static ToolMaterial MAGIC = EnumHelper.addToolMaterial(Constants.Material.MAGIC, 3, 1561/2, 12.0F, 0, 22);
 	public static ArmorMaterial MAGIC_ARMOR = EnumHelper.addArmorMaterial(Constants.Material.MAGIC_ARRMOR, 16,  new int[] {3,8,6,3}, 30);
 	
@@ -71,12 +72,13 @@ public class ModItemsRegistry {
 		CholocateFrog               = new ModItemFoods(Constants.Foods.CHOLOCATE_FROG,5, 0.2f, false, new PotionEffect(Potion.regeneration.id, 200, 1)).setAlwaysEdible();
 
 		//Others
-		SortingHat			= new Item().setUnlocalizedName(Constants.Items.SORTING_HAT).setTextureName(Main.MODID + ":" + Constants.Items.SORTING_HAT).setCreativeTab(CreativeTabs.tabMisc);
+		SortingHat			= new SortingHat().setUnlocalizedName(Constants.Items.SORTING_HAT).setTextureName(Main.MODID + ":" + Constants.Items.SORTING_HAT).setCreativeTab(ModCreativeTabs.tabEEmod);
 		InvisibleCloak		= new Item().setUnlocalizedName(Constants.Items.INVISIBLE_CLOAK).setTextureName(Main.MODID + ":" +  Constants.Items.INVISIBLE_CLOAK).setCreativeTab(CreativeTabs.tabMisc);
 		FlooPowder			= new Item().setUnlocalizedName(Constants.Items.FLOO_POWDER).setTextureName(Main.MODID + ":" +  Constants.Items.FLOO_POWDER).setCreativeTab(CreativeTabs.tabMisc);
 		Portkey				= new Item().setUnlocalizedName(Constants.Items.PORT_KEY).setTextureName(Main.MODID + ":" +  Constants.Items.PORT_KEY).setCreativeTab(CreativeTabs.tabMisc);
 		VanishingCabinet	= new Item().setUnlocalizedName(Constants.Items.VANISHING_CABINET).setTextureName(Main.MODID + ":" +  Constants.Items.VANISHING_CABINET).setCreativeTab(CreativeTabs.tabMisc);
-		
+		EnrollmentNotice    = new EnrollmentNotice().setTextureName(Main.MODID + ":" +  Constants.Items.ENROLLMENT_NOTICE).setCreativeTab(ModCreativeTabs.tabEEmod);
+
 		GameRegistry.registerItem(experimentItem, Constants.Items.EXPERIMENT_ITEM);
 		GameRegistry.registerItem(hammerItem, Constants.Items.HAMMER);
 		GameRegistry.registerItem(MagicWand, Constants.Items.MAGIC_WAND);
@@ -88,7 +90,9 @@ public class ModItemsRegistry {
 		GameRegistry.registerItem(BertieBottsEveryFlavorBeans, Constants.Foods.BERTIE_BOTTS_EVERY_FLAVOR_BEANS);
 		GameRegistry.registerItem(ButterBeer, Constants.Foods.BUTTER_BEAR);
 		GameRegistry.registerItem(CholocateFrog, Constants.Foods.CHOLOCATE_FROG);
-		
+		GameRegistry.registerItem(SortingHat, Constants.Items.SORTING_HAT);
+		GameRegistry.registerItem(EnrollmentNotice, Constants.Items.ENROLLMENT_NOTICE);
+
 		GameRegistry.registerItem(ColorfulSword = new ModItemSwords(Constants.Armor.COLORFUL_SWORD, MAGIC), Constants.Armor.COLORFUL_SWORD);
 		// 0 for helmet
 		GameRegistry.registerItem(magicHelmet = new ModItemArmors(Constants.Armor.MAGIC_HELMET, MAGIC_ARMOR, Constants.Armor.MAGIC_ARMOR_TEXTURE, 0), Constants.Armor.MAGIC_HELMET);

@@ -1,5 +1,7 @@
 package com.github.CreatureOX.eemod.constant;
 
+import com.github.CreatureOX.eemod.Main;
+
 /**
  * @description: const
  * @Author: CreatureOX
@@ -14,13 +16,66 @@ public class Constants {
 
 		public static final String PURPLE_INGOT = "purpleIngot";
 
-		public static final String SORTING_HAT = "SortingHat";
+		public static final String SORTING_HAT = "sortingHat";
 		public static final String INVISIBLE_CLOAK = "InvisibleCloak";
 		public static final String FLOO_POWDER = "FlooPowder";
 		public static final String PORT_KEY = "Portkey";
 		public static final String VANISHING_CABINET = "VanishingCabinet";
+		public static final String ENROLLMENT_NOTICE = "enrollmentNotice";
 	}
 
+	public enum College{
+
+		GRYFFINDOR(0, "Gryffindor", "格兰芬多"),
+		SLYTHERIN(1, "Slytherin", "斯莱特林"),
+		HUFFLEPUFF(2, "Hufflepuff", "赫奇帕奇"),
+		RAVENCLAW(3, "Ravenclaw", "拉文克劳");
+
+		private final Integer collegeCode;
+		private final String enName;
+		private final String zhName;
+
+		private College(Integer collegeCode, String enName, String zhName){
+			this.collegeCode = collegeCode;
+			this.enName = enName;
+			this.zhName = zhName;
+		}
+
+		public Integer getCollegeCode(){
+			return collegeCode;
+		}
+
+		public String getEnName(){
+			return enName;
+		}
+
+		public String getZhName(){
+			return zhName;
+		}
+
+		public static College getByCode(Integer collegeCode){
+			for(College college: College.values()){
+				if(college.getCollegeCode().equals(collegeCode)){
+					return college;
+				}
+			}
+			return null;
+		}
+
+		public static String getLocalName(Integer collegeCode){
+			String langType = Main.LANGUAGE_TYPE;
+			for(College college: College.values()){
+				if(college.getCollegeCode().equals(collegeCode)){
+					if(langType.equals("zh_CN")){
+						return college.getZhName();
+					}else if(langType.equals("en_US")){
+						return college.getEnName();
+					}
+				}
+			}
+			return "???";
+		}
+	}
 	public enum Curse{
 		ICE(1),
 		FIRE(2),

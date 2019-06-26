@@ -1,6 +1,7 @@
 package com.github.CreatureOX.eemod;
 
 import com.github.CreatureOX.eemod.Proxy.CommonProxy;
+import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -14,6 +15,7 @@ public class Main {
 
     public static final String MODID = "EEmod";
     public static final String VERSION = "0.1";
+    public static final String LANGUAGE_TYPE = FMLClientHandler.instance().getClient().gameSettings.language;
 
     private static final String CLIENT_SIDE = "com.github.CreatureOX.eemod.Proxy.ClientProxy";
     private static final String SERVER_SIDE = "com.github.CreatureOX.eemod.Proxy.ServerProxy";
