@@ -77,7 +77,7 @@ public class ModItemsRegistry {
 		FlooPowder			= new Item().setUnlocalizedName(Constants.Items.FLOO_POWDER).setTextureName(Main.MODID + ":" +  Constants.Items.FLOO_POWDER).setCreativeTab(CreativeTabs.tabMisc);
 		Portkey				= new Item().setUnlocalizedName(Constants.Items.PORT_KEY).setTextureName(Main.MODID + ":" +  Constants.Items.PORT_KEY).setCreativeTab(CreativeTabs.tabMisc);
 		VanishingCabinet	= new Item().setUnlocalizedName(Constants.Items.VANISHING_CABINET).setTextureName(Main.MODID + ":" +  Constants.Items.VANISHING_CABINET).setCreativeTab(CreativeTabs.tabMisc);
-		EnrollmentNotice    = new EnrollmentNotice().setTextureName(Main.MODID + ":" +  Constants.Items.ENROLLMENT_NOTICE).setCreativeTab(ModCreativeTabs.tabEEmod);
+		EnrollmentNotice    = new EnrollmentNotice().setUnlocalizedName(Constants.Items.ENROLLMENT_NOTICE).setTextureName(Main.MODID + ":" +  Constants.Items.ENROLLMENT_NOTICE).setCreativeTab(ModCreativeTabs.tabEEmod);
 
 		GameRegistry.registerItem(experimentItem, Constants.Items.EXPERIMENT_ITEM);
 		GameRegistry.registerItem(hammerItem, Constants.Items.HAMMER);
