@@ -9,7 +9,7 @@ import org.lwjgl.input.Keyboard;
 
 public class EEmodGui extends GuiScreen{
 
-	private static final String TEXTURE = "textures/gui/texture.jpg";
+	private static final String TEXTURE = "textures/gui/texture.png";
 
 	private GuiScreen parentScreen;
 	private GuiButton btnClose;
@@ -22,6 +22,7 @@ public class EEmodGui extends GuiScreen{
 		// 在这里初始化与界面无关的数据,或是只需初始化一次的数据.
 	}
 
+	@Override
 	public void initGui() {
 		buttonList.add(btnClose = new GuiButton(0, (int)(width*0.75), (int)(height*0.85), 80, 20, "关闭"));
 		// 打开键盘连续输入
@@ -34,6 +35,7 @@ public class EEmodGui extends GuiScreen{
 		// 这里部署控件
 	}
 
+	@Override
 	public void drawScreen(int par1, int par2, float par3) {
 		drawDefaultBackground();
 		// 绑定纹理
@@ -68,6 +70,23 @@ public class EEmodGui extends GuiScreen{
 
 	@Override
 	protected void mouseClicked(int par1, int par2, int par3) {
+		System.out.println(String.format("You are pointing to: (%d, %d)", par1, par2));
+		Double k1 = 1.0 * height/width;
+		Double k2 = -1.0 * k1;
+		Double line1 = (height/2.0 - par2) - k1*(-width/2.0 + par1);
+		Double line2 = (height/2.0 - par2) - k2*(-width/2.0 + par1);
+		if(line1>0 && line2>0){
+			System.out.println("Area Upper");
+		}
+		if(line1<0 && line2>0){
+			System.out.println("Area Right");
+		}
+		if(line1<0 && line2<0){
+			System.out.println("Area Down");
+		}
+		if(line1>0 && line2<0){
+			System.out.println("Area Left");
+		}
 		// 调用文本框的鼠标点击
 		tfInput.mouseClicked(par1, par2, par3);
 		super.mouseClicked(par1, par2, par3);
